@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+}
+
+
+header {
+    display: flex;
+    background-color: #487ae6;
+    color: white;
+    padding: 50px 0;  
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;  
+    height: 100px;  
+}
+
+/* Ajustando o tamanho da logo */
+header .logo img {
+    width: 70px;  /* Aumentando o tamanho da logo */
+    height: auto;
+}
+
+/* Estilizando os itens de navegação */
+nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    align-items: center;  /* Alinha os itens de navegação ao centro */
+}
+
+/* Estilizando os itens de lista (links) */
+nav ul li {
+    display: inline;
+    margin: 0 20px;  /* Aumentando o espaço entre os itens */
+}
+
+/* Aumentando o tamanho da fonte e o espaçamento dos links */
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 25px;  /* Aumentando o tamanho da fonte dos links */
+    font-weight: bold;  /* Deixando o texto em negrito */
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+    font-size: larger;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1; 
+    padding: 20px;
+}
+
+.forme_cadastro {
+    border-radius: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 8px rgba(44, 45, 44, 0.5);
+    padding: 30px;
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    overflow: hidden;
+}
+
+form label {
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+    color: #000000;
+}
+
+form input, form select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+form input[type="button"] {
+    background-color: #f6f6f7;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form input[type="button"]:hover {
+    background-color: #93bf95;
+}
+
+footer {
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    position: relative;
+    width: 100%;
+}
+
+.forme_cadastro {
+    background-color: #e2e2e2;
+
+}
+
+button {
+    background-color: #f4f4f4;
+}

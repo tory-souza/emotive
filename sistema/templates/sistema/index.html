@@ -1,0 +1,76 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotive+</title>
+    <link rel="icon" href="{% static 'img/logo.png'%}" type="icon-x">
+    <link rel="stylesheet" href="{% static 'css/cssProjeto.css'%}">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{% static 'img/logoComNome.png'%}" alt="Logo Emotive+" width="150" height="100">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Página inicial</a></li>
+                <li><a href="dicasalimentacao.html">Dicas de Alimentações</a></li>
+                <li><a href="#">Como usar</a></li>
+                <li><a href="cadastroUser.html">Cadastra-se</a></li>
+                <button><a class="btlogin" href="login.html">👤 Fazer login</a></button>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="slider">
+        <div class="slides">
+            <img src="{% static 'img/imagem saude.jpeg'%}" alt="Imagem 1">
+            <img src="{% static 'img/imagem saude.jpeg'%}" alt="Imagem 2">
+            <img src="{% static 'img/imagem saude.jpeg'%}" alt="Imagem 3">
+            <img src="{% static 'img/imagem saude.jpeg'%}" alt="Imagem 4">
+        </div>
+    </section>
+    
+    <main>
+        <section class="boasvindas">
+            <h2>Bem-vindo à Emotive+</h2>
+            <p>
+                A Emotive+ foi criada com o objetivo de facilitar a vida das pessoas que vivem com doenças crônicas. Durante o desenvolvimento do projeto, percebemos que não apenas as pessoas com doenças crônicas poderiam se beneficiar, mas toda a população. 
+            </p>
+            <p>
+                Nosso propósito é ajudar você a monitorar diariamente seu estado de saúde em relação à dor, qualidade do sono, onde está sentindo desconforto, como está se sentindo emocionalmente durante o dia, e se está feliz ou triste. 
+            </p>
+            <p>
+                Através do nosso sistema interativo, você pode responder a essas questões de forma simples e prática, e essas informações serão visualizadas pelo seu médico ou médica. Isso ajuda a evitar idas desnecessárias ao posto de saúde e garante que você só vá quando realmente houver necessidade. Seu médico(a) poderá solicitar sua ida ao posto se, através dos relatórios diários que você preencher, identificar algo preocupante.
+            </p>
+            <p>
+                Com a Emotive+, você tem um parceiro diário na sua jornada de saúde e bem-estar, trazendo mais conforto e praticidade para a sua rotina.
+            </p>
+        </section>
+        <aside>
+            <img src="{% static 'img/fotosaude.jpeg'%}" alt="Foto de Saúde" width="400" height="400">
+        </aside>
+    </main>
+
+    <div class="depoimento">
+        <div class="depoimentoh2">
+            <h2>Depoimento</h2>
+            <p>
+                Mudança de Hábitos: "Sempre pensei que mudar meus hábitos alimentares e começar a me exercitar seria impossível.
+                Mas quando fiz pequenos ajustes, como caminhar 15 minutos por dia e incluir mais vegetais na minha alimentação,
+                comecei a notar uma diferença enorme na minha disposição e humor.
+                A saúde se tornou minha prioridade, e hoje me sinto mais forte e confiante para enfrentar qualquer desafio."
+            </p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy;2024 Meu Site. Todos os Direitos Resevados.</p>
+    </footer>
+    
+    <script src="{% static 'script/index.js'%}"></script>
+</body>
+</html>

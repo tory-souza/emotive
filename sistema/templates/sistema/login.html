@@ -1,0 +1,46 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/login.css'%}">
+    <title>Emotive+</title>
+    <link rel="icon" href="{% static 'img/logo.png'%}">
+</head>
+<body>
+    <header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Página Inicial</a></li>
+            <li><a href="#">Sobre Nós</a></li>
+            <li><a href="loginmedico.html">Login Médico</a></li>
+            <br>
+        </ul>
+    </nav>
+</header>
+    <div class="boasvindas"> 
+        <h2>Bem Vindo!</h2> 
+        <p>Insira suas Credenciais para Realizar o Acesso a sua Página Interativa</p>
+        <img class="imglogin" src="{% static 'img/logo.png'%}"> 
+    </div> 
+        <section id="acessar-conta" class="login"> 
+            <h2>Acessar Conta</h2> 
+            <div> 
+                <label>Informe seu CPF <input type="text" id="cpfLogin" placeholder="Digite seu CPF" name="cpfLogin" /></label> 
+            </div> 
+            <div> 
+                <label>Senha <input type="password" id="senhaLogin" placeholder="Digite sua Senha" name="senhaLogin" /></label> 
+            </div> 
+            <div> <button><a href="acesso.html">Login</a></button> 
+                <a id="resetext" href="reset.html">Recuperar Senha</a> 
+        </div>  
+    </section>
+    <br> 
+    <br>
+</body>
+<footer>
+    <p>&copy; 2024 - Turma 232. Todos os Direitos reservados.</p>
+</footer>
+</html>

@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
+    background-color: #f4f4f4;
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+header {
+    position: absolute; 
+    top: 20px; 
+    right: 20px;
+    background-color: #487ae6;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+header nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+header nav ul li {
+    display: inline-block;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.intesUser {
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.intesUser h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.intesUser img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+    transition: background-color 0.1s ease, transform 0.1s ease;
+}
+
+button.forte:hover {
+    background-color: #ff0000;
+}
+
+button.medio:hover {
+    background-color: #bb7204;
+}
+
+button.fraco:hover {
+    background-color: #00b30f;
+}
+
+button:active {
+    transform: scale(0.98);
+    background-color: #0056b3;
+}
+
+.canvas-container { 
+    position: relative; 
+    display: inline-block; 
+} 
+
+.canvas-container img { 
+    display: block; 
+} 
+
+.canvas-container canvas { 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+}
+
+#boneco {
+    position: relative;
+    max-width: 100%; /* Imagem será responsiva */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.ponto {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: red;
+    cursor: pointer;
+}
+
+#informacao {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-width: 300px;
+    margin: 20px auto;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Ajustes de estilo para maior clareza */
+.ponto:hover {
+    background-color: darkred;
+}
+
+/* Responsividade para dispositivos menores */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .intesUser {
+        padding: 20px;
+    }
+
+    header {
+        top: 10px;
+        right: 10px;
+    }
+
+    button {
+        width: 100%;
+        margin: 5px 0;
+    }
+}

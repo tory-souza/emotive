@@ -1,0 +1,37 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotive+</title>
+    <link rel="icon" href="{% static 'img/logo.png'%}">
+    <link rel="stylesheet" href="{% static 'css/reset.css'%}">
+    <script src="{% static 'script/reset.js'%}"></script>
+</head>
+<body>
+    <header>
+        </div>
+        <section id="redefnir-acessir" class="redefinirlogin">
+            <h2>Redefinir Acesso</h2>
+            <div>
+                <label>Informe seu CPF <input type="text" id="cpfreset" name="cpfreset" /></label>
+            </div>
+            <div>
+                <label>Sua data de Nascimento <input type="date" id="dataNasicmento" name="DtNasc" /></label>
+            </div>
+            <div>
+                <label>Informe seu E-mail <input type="email" id="emailreset" name="emailreset" /></label>
+            </div>
+            <div>
+                <button class="senha" onclick="sendMood('Sua senha Foi Enviada por E-mail')">Redefinir Senha</button>
+            </div>
+        </section>    
+    <br>
+<footer>
+        <p>&copy; 2024 - Turma 232. Todos os Direitos reservados.</p>
+</footer>
+</body>
+</body>
+</html>

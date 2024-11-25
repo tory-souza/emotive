@@ -1,0 +1,58 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotive+</title>
+    <link rel="icon" href="{% static 'img/logo.png'%}">
+    <link rel="stylesheet" href="{% static 'css/pacienteRisco.css'%}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="menuMedico.html">Menu Médico</a></li>
+                <li><a href="#">Sobre Nós</a></li>
+                <li><a href="login.html">Fazer Logout</a></li>
+                <br>
+            </ul>
+        </nav>
+    </header>
+    <main>
+<div class="container">
+    <h1>Pacientes em Risco</h1>
+    <p>Lista de pacientes sob os cuidados da Dra. Silva que apresentam condições críticas e precisam de atenção especial.</p>
+
+    <div class="paciente">
+        <h2>Nome: João Santos</h2>
+        <p>Idade: 65</p>
+        <p>Condição: Hipertensão grave</p>
+        <p>Nível de Risco: Alto</p>
+    </div>
+
+    <div class="paciente">
+        <h2>Nome: Maria Oliveira</h2>
+        <p>Idade: 58</p>
+        <p>Condição: Diabetes descontrolada</p>
+        <p>Nível de Risco: Alto</p>
+    </div>
+
+    <div class="paciente">
+        <h2>Nome: Carlos Ferreira</h2>
+        <p>Idade: 72</p>
+        <p>Condição: Insuficiência cardíaca</p>
+        <p>Nível de Risco: Crítico</p>
+    </div>
+
+    <div class="paciente">
+        <h2>Nome: Ana Paula Costa</h2>
+        <p>Idade: 48</p>
+        <p>Condição: Asma severa</p>
+        <p>Nível de Risco: Moderado</p>
+    </div>
+</div>
+</main>
+</body>
+</html>

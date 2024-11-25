@@ -1,0 +1,31 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotive+</title>
+    <link rel="icon" href="{% static 'img/logo.png'%}">
+    <link rel="stylesheet" href="{% static 'css/sono.css'%}">
+    <script src="{% static 'script/sonopaciente.js'%}"></script>
+</head>
+<body> 
+        <div class="UserLogado"> 
+            <h1 id="greeting">Como foi seu sono essa noite [Nome]?</h1> 
+            <button onclick="sendMood('Bom')">Bom 🙂</button> 
+            <button onclick="sendMood('Regular')">Regular 😐</button> 
+            <button onclick="sendMood('Ruim')">Ruim 😟</button> 
+    
+    <label class="sono" for="noite">Quantas vezes acordou à noite? tem alguma queixa: 
+        <input type="text" id="noite" name="noite" min="0"> 
+        <select id="acordou" name="acordou"> 
+            <option value="1">1</option> 
+            <option value="2">2</option> 
+            <option value="3">3</option> 
+            <option value="insonia">Insônia</option> 
+    </select>
+    </label>
+</div>
+</body>
+</html>

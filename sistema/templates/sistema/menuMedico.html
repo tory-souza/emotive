@@ -1,0 +1,40 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotive+</title>
+    <link rel="icon" href="{% static 'img/logo.png'%}">
+    <link rel="stylesheet" href="{% static 'css/menuMedico.css'%}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Página Inicial</a></li>
+                <li><a href="#">Sobre Nós</a></li>
+                <li><a href="loginmedico.html">Fazer Logout</a></li>
+                <br>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="box">
+            <nav>
+                <div class="logo">
+                    <img src="{% static 'img/logo.png'%}" alt="Logo Médica">
+                </div>
+                <ul>
+                    <li><a href="#">Olá Médica</a></li>
+                    <li><a href="consultarPac.html">Consultar Paciente</a></li>
+                    <li><a href="pacienteRisco.html">Pacientes em risco</a></li>
+                    <li><a href="consultasDaSemana..html">Consultas da semana</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+</body>
+</html>

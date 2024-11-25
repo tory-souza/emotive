@@ -1,0 +1,69 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotive+</title>
+    <link rel="icon" href="{% static 'img/logo.png'%}">
+    <link rel="stylesheet" href="{% static 'css/consultaSemana.css'%}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="menuMedico.html">Menu Médico</a></li>
+                <li><a href="#">Sobre Nós</a></li>
+                <li><a href="login.html">Fazer Logout</a></li>
+                <br>
+            </ul>
+        </nav>
+    </header>
+<div class="container">
+    <h1>Agenda de Consultas da Semana</h1>
+    <p>Consultas agendadas para o Dr. Souza durante a semana.</p>
+
+    <div class="consulta">
+        <h2>Segunda-feira</h2>
+        <ul>
+            <li><strong>Horário:</strong> 09:00 - Paciente: João Santos - <em>Check-up anual</em></li>
+            <li><strong>Horário:</strong> 11:00 - Paciente: Maria Oliveira - <em>Consulta de retorno</em></li>
+        </ul>
+    </div>
+
+    <div class="consulta">
+        <h2>Terça-feira</h2>
+        <ul>
+            <li><strong>Horário:</strong> 10:00 - Paciente: Carlos Ferreira - <em>Exames laboratoriais</em></li>
+            <li><strong>Horário:</strong> 14:00 - Paciente: Ana Paula Costa - <em>Consulta de alergia</em></li>
+        </ul>
+    </div>
+
+    <div class="consulta">
+        <h2>Quarta-feira</h2>
+        <ul>
+            <li><strong>Horário:</strong> 09:00 - Paciente: Eduardo Silva - <em>Acompanhamento</em></li>
+            <li><strong>Horário:</strong> 16:00 - Paciente: Fernanda Alves - <em>Consulta de rotina</em></li>
+        </ul>
+    </div>
+
+    <div class="consulta">
+        <h2>Quinta-feira</h2>
+        <ul>
+            <li><strong>Horário:</strong> 11:00 - Paciente: Bruno Costa - <em>Consulta ortopédica</em></li>
+            <li><strong>Horário:</strong> 15:00 - Paciente: Renata Lima - <em>Consulta psicológica</em></li>
+        </ul>
+    </div>
+
+    <div class="consulta">
+        <h2>Sexta-feira</h2>
+        <ul>
+            <li><strong>Horário:</strong> 08:30 - Paciente: Larissa Mendes - <em>Check-up pós-operatório</em></li>
+            <li><strong>Horário:</strong> 13:00 - Paciente: Paulo Gonçalves - <em>Acompanhamento de hipertensão</em></li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>

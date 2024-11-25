@@ -1,0 +1,121 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #16500c;
+    padding: 10px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header .logo img {
+    max-width: 100%;
+    height: auto;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a, .btlogin {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.btlogin {
+    background-color: #EEEEE0;
+    color: black;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.btlogin:hover {
+    background-color: #7bce6d;
+}
+
+.slider {
+    width: 100%;
+    overflow: hidden;
+    position: center;
+}
+
+.slides {
+    display: flex;
+    transition: transform 1s ease;
+}
+
+.slides img {
+    width: 100%;
+    min-width: 100%;
+    border-radius: 10px;
+}
+main {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 1200px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+main section, main aside {
+    flex: 1;
+    margin-right: 20px;
+}
+
+main aside img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.depoimento {
+    background-color: #16500c;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    width: 80%;
+    max-width: 1200px;
+}
+
+.depoimentoh2 h2 {
+    margin: 0;
+}
+
+footer {
+    background-color: #16500c;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    width: 100%;
+}

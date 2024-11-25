@@ -1,0 +1,96 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog de Dicas de Alimentação</title>
+    <link rel="stylesheet" href="{% static 'css/estilos.css'%}">
+</head>
+<body>
+    <header>
+        <h1>Dicas de Alimentação</h1>
+        <p>A alimentação saudável é a base sólida para construir uma vida de bem-estar e alegria.</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="/dicas">Home</a></li>
+            <li><a href="alimentos">Alimentação</a></li>
+            <li><a href="exercicios">Exercícios</a></li>
+            <li><a href="sobre">Sobre</a></li>
+            <li><a href="contato">Contato</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section class="post">
+            <img src="{% static 'img/doencas-cronicas-2.jpg'%}" alt="Alimentação saudável">
+            <div class="post-content">
+                <h2>Benefícios de uma alimentação saudável para o controle de doenças crônicas</h2>
+                
+                <p>A alimentação é um dos pontos mais importantes para pessoas afetadas por doenças crônicas, podendo ajudar a controlar os sintomas. Dietas balanceadas podem reduzir as inflamações e melhorar o controle de doenças. A alimentação adequada fornece mais energia e ajuda a manter um peso saudável, evitando complicações adicionais. Uma alimentação rica em fibras, vitaminas e minerais pode evitar o agravamento de doenças crônicas e reduzir o risco de novas condições.</p>
+            </div>
+        </section>
+
+        <section class="post">
+            <h1>Alimentos Essenciais para uma Dieta Saudável</h1>
+        </section>
+
+        <section class="post">
+            <img src="{% static 'img/frutas-verduras.jpg'%}" alt="Alimentos saudáveis para doenças crônicas">
+            <div class="post-content">
+                <h2>Frutas e Vegetais</h2>
+                
+                <p>Benefícios: Ricos em antioxidantes, fibras, vitaminas e minerais (como vitaminas A, C, K, potássio e magnésio). Ajudam a reduzir inflamações, melhorar o sistema imunológico e controlar níveis de colesterol e glicose no sangue.<br>Exemplos: Brócolis, espinafre, couve, cenoura, maçã, banana, frutas vermelhas (morango, mirtilo).</p>
+            </div>
+        </section>
+
+        <section class="post">
+            <img src="{% static 'img/graos.jpg'%}" alt="Grãos integrais">
+            <div class="post-content">
+                <h2>Grãos Integrais</h2>
+            
+                <p>Os grãos integrais, como aveia, quinoa e arroz integral, são ricos em fibras que ajudam a controlar os níveis de açúcar no sangue, colesterol e promovem uma digestão saudável.Benefícios: Fonte de fibras, que ajudam a controlar o açúcar no sangue, reduzir colesterol e promover uma digestão saudável. Também ajudam a manter a saciedade e controlar o peso.<br>Exemplos: Arroz integral, aveia, quinoa, cevada, trigo integral.</p>
+            </div>
+        </section>
+
+        <section class="post">
+            <img src="{% static 'img/omega 3.jpg'%}" alt="Peixes ricos em ômega-3">
+            <div class="post-content">
+                <h2>Peixes Ricos em Ômega-3</h2>
+                <p>Os peixes como salmão, sardinha, atum, arenque e cavala são ricos em ácidos graxos ômega-3, que oferecem diversos benefícios à saúde. Esses ácidos graxos ajudam a reduzir a inflamação, melhorar a saúde do coração, controlar os níveis de triglicerídeos e a pressão arterial. São especialmente benéficos para pessoas com doenças cardíacas, diabetes e artrite, promovendo uma melhora significativa no bem-estar geral. Portanto, incluir esses peixes na dieta pode ser uma excelente estratégia para manter a saúde cardiovascular e prevenir diversas condições de saúde.</p>
+            </div>
+        </section>
+
+        <section class="post">
+            <img src="{% static 'img/nozes.jpg'%}" alt="Oleaginosas como nozes e sementes">
+            <div class="post-content">
+                <h2>Oleaginosas (Nozes e Sementes)</h2>
+               
+                <p>Benefícios: Leguminosas, como feijão, lentilhas, grão-de-bico e ervilhas, são ricas em proteínBenefícios: Nozes, amêndoas, castanha-do-pará, chia, linhaça e sementes de abóbora são fontes de gorduras saudáveis, como ácidos graxos monoinsaturados e poli-insaturados, que ajudam a reduzir o colesterol ruim (LDL). Além disso, essas opções são ricas em vitaminas e minerais que favorecem a saúde do cérebro, do coração e dos ossos, proporcionando benefícios gerais para o bem-estar.
+
+                    Leguminosas, como feijão, lentilhas, grão-de-bico e ervilhas, são ricas em proteínas vegetais, fibras e nutrientes essenciais, como ferro e folato. Elas ajudam a controlar os níveis de glicose e colesterol, sendo particularmente benéficas para pessoas com diabetes e doenças cardíacas, contribuindo para a manutenção da saúde cardiovascular e metabóli
+
+                    Nozes, amêndoas e sementes, como chia e linhaça, são fontes de gorduras saudáveis que auxiliam na redução do colesterol ruim (LDL) e promovem a saúde do coração. Essas opções são excelentes para incluir na dieta, contribuindo para um estilo de vida mais saudável e equilibrado.</p>
+            </div>
+        </section>
+
+        <section class="post">
+            <img src="{% static 'img/azeite.jpg'%}" alt="Azeite de oliva">
+            <div class="post-content">
+                <h2>Azeite de Oliva</h2>
+                
+                <p>Benefícios: O azeite de oliva é rico em ácidos graxos monoinsaturados e antioxidantes, que promovem a saúde do coração e ajudam a reduzir a inflamação. Ele auxilia no controle dos níveis de colesterol, protegendo contra doenças cardíacas e metabólicas.
+
+                    Exemplos de uso: O azeite de oliva pode ser utilizado em saladas, no preparo de pratos ou para temperar, sendo uma excelente opção para uma alimentação saudável e equilibrada. Além de seus benefícios para a saúde, ele agrega sabor e versatilidade às refeições.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Saúde e Bem-estar. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

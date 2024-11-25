@@ -1,0 +1,180 @@
+/* Estilos Gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: transparent;  /* Fundo transparente */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Cabeçalho */
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 10%;
+    color: white;}
+
+.header .logo img {
+    width: 120px;
+}
+
+.nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+.nav ul li {
+    margin-left: 20px;
+}
+
+.nav ul li a {
+    color: green;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Banner */
+.banner {
+    background-color: #226716;  /* Cor verde mais forte para o banner */
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    background: rgba(34, 103, 22, 0.9); /* Verde forte com transparência */
+}
+
+.banner h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.banner p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    background-color: #5bb450;  /* Verde mais claro para o botão */
+    color: #333;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 25px;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #3b8c2e;  /* Verde suave para o hover */
+}
+
+/* Seção Sobre */
+.about {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: transparent; /* Fundo transparente */
+}
+
+.about h2 {
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+.about p {
+    font-size: 1.2em;
+}
+
+/* Rodapé */
+.footer {
+    background-color: #226716;  /* Mesmo verde do banner para o rodapé */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    background: rgba(34, 103, 22, 0.9); /* Verde forte com transparência */
+}
+
+/* Seção dos Cards */
+.cards-container {
+    display: flex;  /* Exibe os cards em linha */
+    justify-content: space-between;  /* Espaço entre os cards */
+    gap: 20px;  /* Espaçamento entre os cards */
+    padding: 40px 10%;  /* Padding para centralizar a seção */
+    flex-wrap: wrap;  /* Permite que os cards se ajustem em múltiplas linhas, caso necessário */
+}
+
+/* Estilo do card */
+.card {
+    width: 100%;  /* Cada card ocupará 100% da largura do contêiner em telas pequenas */
+    max-width: 300px;  /* Tamanho máximo do card */
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 36px;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    margin: 0;
+    color: #333;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 8px;
+}
+
+.card-btn {
+    background-color: #5bb450;  /* Verde mais claro para o botão */
+    color: #333;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 25px;
+    transition: background-color 0.3s;
+}
+
+.card-btn:hover {
+    background-color: #0056b3;
+}
+
+.card:hover {
+    transform: translateY(-5px);  /* Efeito ao passar o mouse */
+}
+
+/* Estilos responsivos para dispositivos menores */
+@media (max-width: 768px) {
+    .cards-container {
+        flex-direction: column;  /* Exibe os cards em coluna em telas pequenas */
+        align-items: center;  /* Alinha os cards ao centro */
+    }
+
+    .card {
+        background-color: #f4f4f4;
+        padding: 20px;
+        width: 200px; /* Largura dos cards */
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 80px;
+    }
+}

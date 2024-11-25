@@ -1,0 +1,69 @@
+/* Estilo geral do corpo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9; /* Fundo suave para o contraste */
+    margin: 0;
+    padding: 0;
+}
+header {
+    position: absolute; 
+    top: 20px; 
+    right: 100px;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+/* Contêiner principal */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0; /* Fundo leve */
+}
+
+/* Caixa que envolve o menu */
+.box {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave para profundidade */
+    padding: 20px;
+    width: 250px;
+}
+
+/* Estilo do menu */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Itens do menu */
+nav ul li {
+    margin: 15px 0;
+}
+
+/* Links do menu */
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #16500c; /* Cor principal */
+    padding: 12px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    text-align: center;
+    display: block;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Efeito de hover nos links */
+nav ul li a:hover {
+    background-color: #0f3c09; /* Cor mais escura ao passar o mouse */
+    transform: translateY(-2px); /* Efeito de elevação ao passar o mouse */
+}
+
+.logo{
+    text-align: center;
+}
