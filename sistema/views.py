@@ -1,4 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .models import Paciente
+from django.contrib import messages
+
 
 def index(request):
     return render(request, 'sistema/index.html')
@@ -21,8 +24,22 @@ def dicasalimentacao(request):
 def intensidade(request):
     return render(request, 'sistema/intensidade.html')
 
+# Tela de login
 def login(request):
+    if request.method == 'POST':
+        cpf = request.POST['cpf']
+        senha = request.POST['senha']
+        nome = request.POST['nome']
+
+        try:
+            paciente = Paciente.objects.get(cpf=cpf, senha=senha, nome=nome)
+            messages.success(request, f'Bem-vindo, {paciente.nome}!')
+            return redirect('acesso')
+        except Paciente.DoesNotExist:
+            messages.error(request, 'Usuário ou senha inválidos.')
+
     return render(request, 'sistema/login.html')
+
 
 def loginmedico(request):
     return render(request, 'sistema/loginmedico.html')
