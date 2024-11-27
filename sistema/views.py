@@ -1,4 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
+from .models import Paciente,Medico,Consulta,Diario
+from django.contrib import messages
+
 
 def index(request):
     return render(request, 'sistema/index.html')
@@ -25,7 +28,17 @@ def login(request):
     return render(request, 'sistema/login.html')
 
 def loginmedico(request):
-    return render(request, 'sistema/loginmedico.html')
+    if request.method=='POST':
+        email=request.POST['email']
+        senha=request.POST['senha']
+
+        try:
+            medico=Medico.objects.get(email=email,senha=senha)
+            return redirect ('menuMedico') #OU PODE MUDAR PARA ASSIM QUE LOGAR ELE IR PRA PACIENTES EM RISCOS
+        except Medico.DoesNotExist:
+            messages.error(request,'Usuário ou senha inválidos.')
+    return render(request,'sistema/loginmedico.html')
+
 
 def menuMedico(request):
     return render(request, 'sistema/menuMedico.html')

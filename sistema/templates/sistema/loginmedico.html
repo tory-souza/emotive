@@ -28,13 +28,16 @@
         <section id="acessar-conta" class="login"> 
             <h2>Acessar Conta</h2> 
             <div> 
-                <label>Informe seu CPF <input type="text" id="cpfLogin" placeholder="Digite seu CPF" name="cpfLogin" /></label> 
+                <form action="post">
+                    {% csrf_token %}
+                <label>Informe seu Email <input type="text" id="email" placeholder="Digite seu Email" name="email" required /></label> 
             </div> 
             <div> 
-                <label>Senha <input type="password" id="senhaLogin" placeholder="Digite sua Senha" name="senhaLogin" /></label> 
+                <label>Senha <input type="password" id="senha" placeholder="Digite sua Senha" name="senha" required/></label> 
             </div> 
-            <div> <button><a href="menuMedico.html">Login</a></button> 
-                <a id="resetext" href="reset.html">Recuperar Senha</a> 
+            <div> <button type="submit">Login</button> 
+                <a id="resetext" href="reset.html">Recuperar Senha</a>
+            </form> 
         </div>  
     </section>
     <br> 
