@@ -2,6 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,41 +10,45 @@
     <title>Emotive+</title>
     <link rel="icon" href="{% static 'img/logo.png'%}">
 </head>
+
 <body>
     <header>
-    <nav>
-        <ul>
-            <li><a href="index.html">Página Inicial</a></li>
-            <li><a href="#">Sobre Nós</a></li>
-            <li><a href="login.html">Login Paciente</a></li>
-            <br>
-        </ul>
-    </nav>
-</header>
-    <div class="boasvindas"> 
-        <h2>Bem Vindo!</h2> 
+        <nav>
+            <ul>
+                <li><a href="index.html">Página Inicial</a></li>
+                <li><a href="#">Sobre Nós</a></li>
+                <li><a href="login.html">Login Paciente</a></li>
+                <br>
+            </ul>
+        </nav>
+    </header>
+    <div class="boasvindas">
+        <h2>Bem Vindo!</h2>
         <p>Insira suas Credenciais para Realizar o Acesso a sua Página Interativa</p>
-        <img class="imglogin" src="{% static 'img/logo.png'%}"> 
-    </div> 
-        <section id="acessar-conta" class="login"> 
-            <h2>Acessar Conta</h2> 
-            <div> 
-                <form action="post">
-                    {% csrf_token %}
-                <label>Informe seu Email <input type="text" id="email" placeholder="Digite seu Email" name="email" required /></label> 
-            </div> 
-            <div> 
-                <label>Senha <input type="password" id="senha" placeholder="Digite sua Senha" name="senha" required/></label> 
-            </div> 
-            <div> <button type="submit">Login</button> 
-                <a id="resetext" href="reset.html">Recuperar Senha</a>
-            </form> 
-        </div>  
+        <img class="imglogin" src="{% static 'img/logo.png'%}">
+    </div>
+    <section id="acessar-conta" class="login">
+        <h2>Acessar Conta</h2>
+        <div>
+            <form method="post">
+                {% csrf_token %}
+                <label>Informe seu Email <input type="text" id="email" value="email" placeholder="Digite seu Email"
+                        name="email" required /></label>
+        </div>
+        <div>
+            <label>Senha <input type="password" id="senha" value="senha" placeholder="Digite sua Senha" name="senha"
+                    required /></label>
+        </div>
+        <div> <button type="submit">Login</button>
+            <a id="resetext" href="reset.html">Recuperar Senha</a>
+            </form>
+        </div>
     </section>
-    <br> 
+    <br>
     <br>
 </body>
 <footer>
     <p>&copy; 2024 - Turma 232. Todos os Direitos reservados.</p>
 </footer>
+
 </html>
