@@ -29,12 +29,12 @@ def login(request):
 
 def loginmedico(request):
     if request.method=='POST':
-        email=request.POST['email']
-        senha=request.POST['senha']
+        email=request.POST['email']   #ailson@email.com
+        senha=request.POST['senha']     #12345
         
         try:
             medico=Medico.objects.get(email=email,senha=senha)
-            return redirect ('sistema/menuMedico.html') #OU PODE MUDAR PARA ASSIM QUE LOGAR ELE IR PRA PACIENTES EM RISCOS
+            return redirect ('menuMedico') #OU PODE MUDAR PARA ASSIM QUE LOGAR ELE IR PRA PACIENTES EM RISCOS
         except Medico.DoesNotExist:
             messages.error(request, 'Usuário ou senha inválidos.')
              
