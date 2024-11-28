@@ -1,40 +1,51 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto - Inspirado na Hapvida</title>
-    <link rel="stylesheet" href="{% static 'css/estilos.css'%}">
+    <title>Emotive +</title>
+    <link rel="icon" href="{% static 'img/logo.png'%}" type="icon-x">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
 </head>
 <body>
+
 
     <!-- Cabeçalho -->
     <header class="header">
         <div class="logo">
-            <img src="{% static 'img/logobranca.png'%}" alt="Logo Hapvida">
+            <img src="{% static 'img/logoComNome.png'%}" alt="Logo Emotive">
         </div>
         <nav class="nav">
             <ul>
-                <li><a href="">Início</a></li>
-                <li><a href="#">Planos</a></li>
-                <li><a href="#">Unidades</a></li>
+                <li><a href="#">Página inicial</a></li>
+                <li><a href="/dicas/alimentos">Dicas de Alimentações</a></li>
+                <li><a href="#">Como usar</a></li>
+                <li><a href="/sistema/cadastroUser">Cadastra-se</a></li>
                 <li><a href="#">Contato</a></li>
+                <li><a class="btlogin" href="/login"> Fazer login</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Banner -->
-    <section class="banner">
-        <div class="banner-content">
-            <h1>Cuide de sua saúde com a melhor qualidade</h1>
-            <p>Planos de saúde para toda a família</p>
-            <a href="#" class="cta-button">Saiba Mais</a>
+    <section class="slider">
+        <div class="slides">
+            <img src="{% static 'img/slides1.jpg'%}" alt="Imagem 1">
+            <img src="{% static 'img/slides2.jpg'%}" alt="Imagem 2">
+            <img src="{% static 'img/slides3.jpg'%}" alt="Imagem 3">
+            <img src="{% static 'img/slides4.jpg'%}" alt="Imagem 4">
+        </div>
+        <div class="dots">
+            <span class="dot" data-slide="0"></span>
+            <span class="dot" data-slide="1"></span>
+            <span class="dot" data-slide="2"></span>
+            <span class="dot" data-slide="3"></span>
         </div>
     </section>
+    
 
-    <!-- Cards -->
+    
+    </section>   
     <div class="cards-container">
         <div class="card">
             <img src="{% static 'img/ffb67c0cbdf3cc4dd2a13b69ce367cd4_XL.jpg'%}" alt="Imagem do Card" class="card-img">
@@ -46,7 +57,8 @@
 
 
                 </p>
-                <button class="card-btn">Saiba Mais</button>
+                <br>
+                <a class="btlogin" href=""> Saiba Mais</a>
             </div>
         </div>
         <div class="card">
@@ -56,52 +68,102 @@
                 <p class="card-text">
                     Sua saúde merece atenção especial!
                     Consultas médicas personalizadas para monitorar sua saúde, diagnosticar precocemente e oferecer tratamentos eficazes.
+                    <br>
                     </p>
-                <button class="card-btn">Saiba Mais</button>
+                    <br>
+                    <a class="btlogin" href=""> Saiba Mais</a>
+                    <br>
             </div>
         </div>
         <div class="card">
             <img src="{% static 'img/monitoramento-saude-01.jpg'%}" alt="Imagem do Card" class="card-img">
             <div class="card-content">
-                <h2 class="card-title">Monitoramento de Saúde Personalizado🩺 </h2>
+                <h2 class="card-title">Monitoramento de Saúde Personalizado🩺</h2>
                 <p class="card-text">
                     Com nosso serviço de monitoramento contínuo e cuidados personalizados, ajudamos a prevenir complicações
                      e a manter sua saúde sempre em dia.
+                     
                     
                     
                     </p>
-                <button class="card-btn">Saiba Mais</button>
+                    <br>
+                    <a class="btlogin" href=""> Saiba Mais</a>
             </div>
         </div>
     </div>
-
-    <!-- Seção de Depoimentos -->
-    <section class="testimonials">
-        <h2>O que nossos pacientes dizem</h2>
+    <section class="banner">
+        <div class="banner-content">
+            <h1 id="csaude">Cuide de sua saúde com a melhor qualidade</h1>
+            <p id="ccsaude">Seu progresso em saúde, monitorado com precisão.</p>
+            <a href="#" class="cta-button">Saiba Mais</a>
+        </div>
+    </section> 
+       <!-- Seção de Depoimentos -->
+       <section class="testimonials">
+        <h2>O que falam sobre a Emotive+</h2>
         <div class="testimonial-card">
-            <p class="testimonial-text">"Graças ao site da Hapvida, consegui entender melhor os planos de saúde e tomei decisões mais informadas. A navegação fácil e a clareza das informações ajudaram a minha família a escolher o plano ideal!"</p>
-            <p class="testimonial-author">Maria Silva, Paciente</p>
+            <div class="testimonial-img">
+                <img src="{% static 'img/7.png'%}" alt="ClienteUm">
+            </div>
+            <div class="testimonial-text">
+                <p class="testimonial-quote">"Graças ao site da Hapvida, consegui entender melhor os planos de saúde e tomei decisões mais informadas. A navegação fácil e a clareza das informações ajudaram a minha família a escolher o plano ideal!"</p>
+                <p class="testimonial-author">Maria Silva, Paciente</p>
+            </div>
         </div>
         <div class="testimonial-card">
-            <p class="testimonial-text">"O atendimento online e a facilidade de agendamento de consultas diretamente pelo site me proporcionaram muito mais conforto e praticidade. Minha experiência foi incrível!"</p>
-            <p class="testimonial-author">Carlos Almeida, Paciente</p>
+            <div class="testimonial-img">
+                <img src="{% static 'img/6.png'%}" alt="clienteDois">
+            </div>
+            <div class="testimonial-text">
+                <p class="testimonial-quote">"O atendimento online e a facilidade de agendamento de consultas diretamente pelo site me proporcionaram muito mais conforto e praticidade. Minha experiência foi incrível!"</p>
+                <p class="testimonial-author">Carlos Almeida, Paciente</p>
+            </div>
         </div>
         <div class="testimonial-card">
-            <p class="testimonial-text">"Nunca imaginei que um site poderia ajudar tanto em questões de saúde. A integração com as unidades e planos foi perfeita. Agora me sinto muito mais seguro com as opções que encontrei." </p>
-            <p class="testimonial-author">Ana Oliveira, Paciente</p>
+            <div class="testimonial-img">
+                <img src="{% static 'img/8.png'%}" alt="clienteTres">
+            </div>
+            <div class="testimonial-text">
+                <p class="testimonial-quote">"Nunca imaginei que um site poderia ajudar tanto em questões de saúde. A integração com as unidades e planos foi perfeita. Agora me sinto muito mais seguro com as opções que encontrei." </p>
+                <p class="testimonial-author">Ana Oliveira, Paciente</p>
+            </div>
         </div>
     </section>
-
-    <!-- Seção sobre -->
-    <section class="about">
-        <h2>Sobre a Hapvida</h2>
-        <p>Conheça mais sobre a nossa história e o compromisso com a sua saúde.</p>
+    <section class="health-priority">
+        <h2>Saúde é Prioridade</h2>
+        <div class="health-priority-content">
+            <div class="health-priority-text">
+                <h3>Cuide da Sua Saúde com Responsabilidade</h3>
+                <p>Bem-vindo ao nosso aplicativo de cuidado com pessoas com doenças crônicas! Acreditamos que a saúde não é apenas a ausência de doenças, mas um estado de bem-estar que deve ser cuidado de forma contínua e integrada. Por isso, desenvolvemos uma solução inovadora para ajudá-lo a gerenciar sua saúde de maneira mais eficiente, prática e personalizada. Nosso aplicativo foi criado com o objetivo de proporcionar mais qualidade de vida, oferecendo ferramentas para o monitoramento constante da saúde e apoio para quem vive com doenças crônicas. Seja para controlar a medicação, monitorar interrupções de saúde ou receber orientações sobre hábitos</p>
+            </div>
+            <div class="health-priority-image">
+                <img src="{% static 'img/Acompanhamento na sola da bota.png'%}" alt="a saúde com qualidade">
+            </div>
+        </div>
+        </div>
     </section>
+    <section class="sobre">
+        <div class="sobre">
+            <div id="contactir" class="sobreTexto">
+                <br>
+                <br><br>
+                <h2>Sobre a Emotive +</h2>
+                <p>Conheça mais sobre a nossa história e o compromisso com a sua saúde.</p>
+                <p><a class="emailfooter" href="mailto:contato@emotivesaude.com.br">Contato: contato@emotivesaude.com.br </a></p>
+            </div>
+        </div>
 
-    <!-- Rodapé -->
-    <footer class="footer">
-        <p>&copy; 2024 Hapvida - Todos os direitos reservados</p>
-    </footer>
+        <div class="sobreImagem">
+            <img  src="{% static 'img/redessociais.png'%}" alt="Cuide da saúde com qualidade">
+        </div>
+    </section>
+        <!-- Rodapé -->
+        <footer class="footer">
+            <p>&copy; 2024 Turma 232 - Todos os direitos reservados</p>
+            <p><a class="emailtermos" href="#">Termos de Uso | Politícas de Privacidade</a></p>
+        </footer>
+        <script src="{% static 'script/index.js'%}"></script>
 
 </body>
 </html>
+
