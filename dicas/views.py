@@ -21,8 +21,8 @@ def sobre(request):
 def beneficios(request):
     return render(request, 'dicas/beneficios.html')
 
-def yago(request):
-    return render(request, 'dicas/yago.html')
+def yoga(request):
+    return render(request, 'dicas/yoga.html')
 
 def natacao(request):
     return render(request, 'dicas/natacao.html')

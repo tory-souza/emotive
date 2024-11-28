@@ -8,7 +8,7 @@ urlpatterns = [
     path ('contato', views.contato, name='contato'),
     path ('sobre', views.sobre, name='sobre'),
     path ('exercicios', views.exercicios, name='exercicios'),
-    path ('yago', views.yago, name='yago'),
+    path ('yoga', views.yoga, name='yoga'),
     path ('natacao', views.natacao, name='natacao'),
     path ('caminhada', views.caminhada, name='caminhada'),
 ]

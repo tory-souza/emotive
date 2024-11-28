@@ -1,30 +1,31 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog de Dicas de Saúde</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
     <header class="header">
         <div class="logo">
-            <img src="img/logoComNome.png" alt="Logo Hapvida">
+            <img src="{% static 'img/logoComNome.png' %}" alt="Logo Hapvida">
         </div>
         <nav class="nav">
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="alimentos.html">Alimentação</a></li>
-                <li><a href="exercicios.html">Exercícios</a></li>
-                <li><a href="sobre.html">Sobre</a></li>
-                <li><a href="contato.html">Contato</a></li>
-                <li><a class="btlogin" href="login.html"> Fazer login</a></li>
+                <li><a href="/dicas/">Home</a></li>
+                <li><a href="/dicas/alimentos">Alimentação</a></li>
+                <li><a href="/dicas/exercicios">Exercícios</a></li>
+                <li><a href="/dicas/sobre">Sobre</a></li>
+                <li><a href="/dicas/contato">Contato</a></li>
+                <li><a class="btlogin" href="/login"> Fazer login</a></li>
             </ul>
         </nav>
     </header>
     <main>
 <section class="post">
-    <img src="img/natacao.jpg" alt="Natação para controle de doenças crônicas">
+    <img src="{% static 'img/natacao.jpg' %}" alt="Natação para controle de doenças crônicas">
     <div class="post-content">
         <h2>Natação</h2>
             <br><br>Dicas Adicionais para Natação com Doenças Crônicas
@@ -77,12 +78,12 @@
     </div>
 
     <div class="sobreImagem">
-        <img  src="img/redessociais.png" alt="Cuide da saúde com qualidade">
+        <img  src="{% static 'img/redessociais.png' %}" alt="Cuide da saúde com qualidade">
     </div>
 </section>
     <!-- Rodapé -->
     <footer class="footer">
         <p>&copy; 2024 Turma 232 - Todos os direitos reservados</p>
-        <p><a class="emailtermos" href="termos.html">Termos de Uso | Politícas de Privacidade</a></p>
+        <p><a class="emailtermos" href="#">Termos de Uso | Politícas de Privacidade</a></p>
     </footer>
 </body>

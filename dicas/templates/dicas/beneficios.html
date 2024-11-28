@@ -1,11 +1,12 @@
 {% load static %}
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog de Dicas de Saúde</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
 </head>
 <body>
     <header class="header">
@@ -18,7 +19,7 @@
                 <li><a href="/dicas/alimentos">Alimentação</a></li>
                 <li><a href="/dicas/exercicios">Exercícios</a></li>
                 <li><a href="/dicas/sobre">Sobre</a></li>
-                <li><a href="/dicas/contato.html">Contato</a></li>
+                <li><a href="/dicas/contato">Contato</a></li>
                 <li><a class="btlogin" href="/login"> Fazer login</a></li>
             </ul>
         </nav>
@@ -70,13 +71,13 @@ Lembre-se: os bons hábitos alimentares funcionam como fator protetor se forem a
                 </div>
         
                 <div class="sobreImagem">
-                    <img  src="img/redessociais.png" alt="Cuide da saúde com qualidade">
+                    <img  src="{% static 'img/redessociais.png'%}" alt="Cuide da saúde com qualidade">
                 </div>
             </section>
                 <!-- Rodapé -->
                 <footer class="footer">
                     <p>&copy; 2024 Turma 232 - Todos os direitos reservados</p>
-                    <p><a class="emailtermos" href="termos.html">Termos de Uso | Politícas de Privacidade</a></p>
+                    <p><a class="emailtermos" href="#">Termos de Uso | Politícas de Privacidade</a></p>
                 </footer>
 
         </section>
