@@ -9,11 +9,23 @@ def contato(request):
 def exercicios(request):
     return render(request, 'dicas/exercicios.html')
 
-def home(request):
-    return render(request, 'dicas/home.html')
+def alogamento(request):
+    return render(request, 'dicas/alogamento.html')
 
 def index(request):
     return render(request, 'dicas/index.html')
 
 def sobre(request):
     return render(request, 'dicas/sobre.html')
+
+def beneficios(request):
+    return render(request, 'dicas/beneficios.html')
+
+def yago(request):
+    return render(request, 'dicas/yago.html')
+
+def natacao(request):
+    return render(request, 'dicas/natacao.html')
+
+def caminhada(request):
+    return render(request, 'dicas/caminhada.html')

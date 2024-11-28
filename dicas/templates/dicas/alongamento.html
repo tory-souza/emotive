@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog de Dicas de Saúde</title>
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="{% static 'img/logoComNome.png'%}" alt="Logo Hapvida">
+        </div>
+        <nav class="nav">
+            <ul>
+                <li><a href="/dicas/">Home</a></li>
+                <li><a href="/dicas/alimentos">Alimentação</a></li>
+                <li><a href="/dicas/exercicios">Exercícios</a></li>
+                <li><a href="/dicas/sobre">Sobre</a></li>
+                <li><a href="/dicas/contato.html">Contato</a></li>
+                <li><a class="btlogin" href="/login"> Fazer login</a></li>
+            </ul>
+        </nav>
+    </header>
+        <h1 class="Titulo1">Dicas de alongamento</h1>
+        <br>
+        <p class="Frase"><big>Alongue-se para uma vida mais flexível e livre de dores!</big></p>
+
+    <main>
+    <section class="post">
+        <img src="{% static 'img/alongamento2.jpg'%}" alt="Alongamento">
+        <br><br>
+    <div class="post-content">
+<p>
+•	Dicas de alongamento:
+<br><br>
+1.	Alongamento do Pescoço: <br><br>
+•	Sente-se ou fique de pé com postura ereta. Incline suavemente a cabeça para um lado, aproximando a orelha do ombro. <br><br>
+•	Segure por 10 a 15 segundos e troque de lado. <br><br>
+•	Repetição: 2 vezes de cada lado. <br><br>
+2.	Rotações de Ombros: <br><br>
+•	Gire os ombros para trás em movimentos circulares amplos por 10 segundos e depois para frente. <br><br>
+•	Repetição: 2 séries em cada direção. <br><br>
+</p>
+</div>
+</section>
+</main>
+<section class="sobre">
+    <div class="sobre">
+        <div class="sobreTexto">
+            <br>
+            <br><br>
+            <h2>Sobre a Emotive +</h2>
+            <p>Conheça mais sobre a nossa história e o compromisso com a sua saúde.</p>
+            <p><a class="emailfooter" href="mailto:contato@emotivesaude.com.br">Contato: contato@emotivesaude.com.br </a></p>
+        </div>
+    </div>
+
+    <div class="sobreImagem">
+        <img  src="{% static 'img/redessociais.png'%}" alt="Cuide da saúde com qualidade">
+    </div>
+</section>
+    <!-- Rodapé -->
+    <footer class="footer">
+        <p>&copy; 2024 Turma 232 - Todos os direitos reservados</p>
+        <p><a class="emailtermos" href="termos.html">Termos de Uso | Politícas de Privacidade</a></p>
+    </footer>
+</body>

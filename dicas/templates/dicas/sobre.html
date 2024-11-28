@@ -1,29 +1,30 @@
-{% load static %}
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog de Dicas de Atividade Física e Saúde</title>
-    <link rel="stylesheet" href="{% static 'css/estilosob.css'%}">
+    <link rel="stylesheet" href="css/stylesobre.css">
 </head>
 <body>
-    <header>
-        <h1>Sobre Nós</h1>
-        <p>Orientações e recursos para pessoas com doenças crônicas viverem com mais qualidade de vida.</p>
+    <header class="header">
+        <div class="logo">
+            <img src="img/logoComNome.png" alt="Logo Hapvida">
+        </div>
+        <nav class="nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="alimentos.html">Alimentação</a></li>
+                <li><a href="exercicios.html">Exercícios</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a class="btlogin" href="login.html"> Fazer login</a></li>
+            </ul>
+        </nav>
     </header>
-    
-    <nav>
-        <ul>
-            <li><a href="/dicas">Home</a></li>
-            <li><a href="alimentos">Alimentação</a></li>
-            <li><a href="exercicios">Exercícios</a></li>
-            <li><a href="sobre">Sobre nós</a></li>
-            <li><a href="contato">Contato</a></li>
-        </ul>
-    </nav>
-    
+        <h1 class="Titulo1">Sobre Nós</h1>
+        <br>
+        <p class="Frase"><big>Orientações e recursos para pessoas com doenças crônicas viverem com mais qualidade de vida.</big></p>
     <main>
         <section class="post">
             <h1>Sobre Nós</h1>
@@ -43,16 +44,32 @@
                 <li><strong>Empatia e Inclusão:</strong> Acreditamos que cada pessoa é única e merece um cuidado personalizado e respeitoso.</li>
             </ul>
 
-            <h2>Por Que Escolher o <strong>[Nome do Site]</strong>?</h2>
+            <h2>Por Que Escolher o <strong>Saúde e Bem-estar</strong>?</h2>
             <p>Com o apoio de especialistas e profissionais de saúde, nosso site oferece conteúdos confiáveis e orientações práticas para que você possa iniciar sua jornada rumo a uma vida mais saudável, com segurança e sem complicação. Estamos aqui para ajudar você a escolher a atividade física mais adequada para o seu perfil, oferecendo dicas, informações sobre benefícios e cuidados necessários.</p>
 
             <h2>Apoio Médico</h2>
             <p>Embora nosso foco seja a educação e orientação, entendemos que cada pessoa é única e, por isso, o acompanhamento médico é fundamental. Se você precisar de consultas mais aprofundadas, diagnóstico ou prescrição de exercícios, temos um site parceiro, <strong> Emotive+</strong>, que oferece consultas com especialistas na área de doenças crônicas. Lá, você pode agendar consultas com médicos e outros profissionais de saúde qualificados para um acompanhamento personalizado.</p>
         </section>
     </main>
+    <section class="sobre">
+        <div class="sobre">
+            <div class="sobreTexto">
+                <br>
+                <br><br>
+                <h2>Sobre a Emotive +</h2>
+                <p>Conheça mais sobre a nossa história e o compromisso com a sua saúde.</p>
+                <p><a class="emailfooter" href="mailto:contato@emotivesaude.com.br">Contato: contato@emotivesaude.com.br </a></p>
+            </div>
+        </div>
 
-    <footer>
-        <p>&copy; 2024 Saúde e Bem-estar. Todos os direitos reservados.</p>
-    </footer>
+        <div class="sobreImagem">
+            <img  src="img/redessociais.png" alt="Cuide da saúde com qualidade">
+        </div>
+    </section>
+        <!-- Rodapé -->
+        <footer class="footer">
+            <p>&copy; 2024 Turma 232 - Todos os direitos reservados</p>
+            <p><a class="emailtermos" href="termos.html">Termos de Uso | Politícas de Privacidade</a></p>
+        </footer>
 </body>
 </html>

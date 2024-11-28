@@ -1,35 +1,37 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog de Dicas de Saúde</title>
-    <link rel="stylesheet" href="{% static 'css/estilos.css'%}">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
 </head>
 <body>
-    <header>
-        <h1>Blog de Saúde e Bem-estar</h1>
-        <p>Encontre dicas para melhorar sua saúde e bem-estar.</p>
+    <header class="header">
+        <div class="logo">
+            <img src="{% static 'img/logoComNome.png'%}" alt="Logo Emovite">
+        </div>
+        <nav class="nav">
+            <ul>
+                <li><a href="/dicas/">Home</a></li>
+                <li><a href="/dicas/alimentos">Alimentação</a></li>
+                <li><a href="/dicas/exercicios">Exercícios</a></li>
+                <li><a href="/dicas/sobre">Sobre</a></li>
+                <li><a href="/dicas/contato.html">Contato</a></li>
+                <li><a class="btlogin" href="/portal/login"> Fazer login</a></li>
+            </ul>
+        </nav>
     </header>
-    
-    <nav>
-        <ul>
-            <li><a href="/dicas">Home</a></li>
-            <li><a href="alimentos">Alimentação</a></li>
-            <li><a href="exercicios">Exercícios</a></li>
-            <li><a href="sobre">Sobre</a></li>
-            <li><a href="contato">Contato</a></li>
-        </ul>
-    </nav>
+    <section class="slider">
+        <div class="slides">
+            <img src="{% static 'img/6.png'%}" alt="Imagem 1">
+            <img src="{% static 'img/7.png'%}" alt="Imagem 2">
+            <img src="{% static 'img/8.png'%}" alt="Imagem 3">
+        </div>
+    </section>
+    <h1 class="Titulo1">Blog de saude e bem-estar</h1>
     <main>
-        <section class="post">
-            <img src="https://blog.madrugaosuplementos.com.br/wp-content/uploads/2019/03/alimentacao_e_exercicios_f%C3%ADsicos_madrugao_suplementos.jpg" alt="Alimentação saudável">
-            
-            </div>
-        </section>
-
         <section> <h1> Alimentação Saudável</h1></section>
 
         <section class="post">
@@ -39,7 +41,7 @@
                 <p class="date">Publicado em: 10 de novembro de 2024</p>
                 <p> Controlar a qualidade e a quantidade dos alimentos, evitando excessos e optando por preparos saudáveis, é fundamental para garantir a saúde física e o equilíbrio emocional. Uma dieta equilibrada contribui para uma vida mais plena e saudável.
                  .</p>
-                <a href="alimentos.html" class="read-more">Leia mais</a>
+                <a href="/dicas/alimentos" class="read-more">Leia mais</a>
             </div>
         </section>
 
@@ -51,13 +53,29 @@
                 <h2>Praticar exercícios regularmente ajuda a reduzir o estresse, melhora o humor e fortalece o sistema imunológico. Reserve 30 minutos diários para se movimentar.</h2>
                 <p class="date">Publicado em: 7 de novembro de 2024</p>
                 <p>Além disso, a prática regular de atividades físicas melhora a qualidade do sono e aumenta a energia ao longo do dia. Manter uma rotina ativa é essencial para a saúde física e mental.</p>
-                <a href="exercicios.html" class="read-more">Leia mais</a>
+                <a href="/dicas/exercicios" class="read-more">Leia mais</a>
             </div>
         </section>
     </main>
+    <section class="sobre">
+        <div class="sobre">
+            <div class="sobreTexto">
+                <br>
+                <br><br>
+                <h2>Sobre a Emotive +</h2>
+                <p>Conheça mais sobre a nossa história e o compromisso com a sua saúde.</p>
+                <p><a class="emailfooter" href="mailto:contato@emotivesaude.com.br">Contato: contato@emotivesaude.com.br </a></p>
+            </div>
+        </div>
 
-    <footer>
-        <p>&copy; 2024 Saúde e Bem-estar. Todos os direitos reservados.</p>
-    </footer>
+        <div class="sobreImagem">
+            <img  src="{% static 'img/redessociais.png'%}" alt="Cuide da saúde com qualidade">
+        </div>
+    </section>
+        <!-- Rodapé -->
+        <footer class="footer">
+            <p>&copy; 2024 Turma 232 - Todos os direitos reservados</p>
+            <p><a class="emailtermos" href="termos.html">Termos de Uso | Politícas de Privacidade</a></p>
+        </footer>
 </body>
 </html>

@@ -1,31 +1,32 @@
-{% load static %}
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contato - [Nome do Site]</title>
-    <link rel="stylesheet" href="{% static 'css/estilocont.css'%}">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <h1>Entre em Contato Conosco</h1>
-        <p>Se você tiver dúvidas ou precisar de mais informações, entre em contato com a nossa equipe.</p>
+    <header class="header">
+        <div class="logo">
+            <img src="img/logoComNome.png" alt="Logo Hapvida">
+        </div>
+        <nav class="nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="alimentos.html">Alimentação</a></li>
+                <li><a href="exercicios.html">Exercícios</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a class="btlogin" href="login.html"> Fazer login</a></li>
+            </ul>
+        </nav>
     </header>
-    
-    <nav>
-        <ul>
-            <li><a href="/dicas">Home</a></li>
-            <li><a href="alimentos">Alimentação</a></li>
-            <li><a href="exercicios">Exercícios</a></li>
-            <li><a href="sobre">Sobre</a></li>
-            <li><a href="contato">Contato</a></li>
-        </ul>
-    </nav>
-
+        <h1 class="Titulo1">Entre em Contato Conosco</h1>
+        <br>
+        <p class="Frase"><big>Se você tiver dúvidas ou precisar de mais informações, entre em contato com a nossa equipe.</big></p>
     <main>
-        <section class="contato">
+        <section class="post12">
             <h2>Informações de Contato</h2>
             <p>Você pode nos contatar de diversas formas. Escolha a que for mais conveniente para você:</p>
             
@@ -44,8 +45,25 @@
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2024 Saúde e Bem-estar. Todos os direitos reservados.</p>
-    </footer>
+    <section class="sobre">
+        <div class="sobre">
+            <div class="sobreTexto">
+                <br>
+                <br><br>
+                <h2>Sobre a Emotive +</h2>
+                <p>Conheça mais sobre a nossa história e o compromisso com a sua saúde.</p>
+                <p><a class="emailfooter" href="mailto:contato@emotivesaude.com.br">Contato: contato@emotivesaude.com.br </a></p>
+            </div>
+        </div>
+
+        <div class="sobreImagem">
+            <img  src="img/redessociais.png" alt="Cuide da saúde com qualidade">
+        </div>
+    </section>
+        <!-- Rodapé -->
+        <footer class="footer">
+            <p>&copy; 2024 Turma 232 - Todos os direitos reservados</p>
+            <p><a class="emailtermos" href="termos.html">Termos de Uso | Politícas de Privacidade</a></p>
+        </footer>
 </body>
 </html>
