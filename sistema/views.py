@@ -1,4 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
+from .models import Usuario
+from .forms import UsuarioForm
 
 def index(request):
     return render(request, 'sistema/index.html')
@@ -7,7 +9,19 @@ def acesso(request):
     return render(request, 'sistema/acesso.html')
 
 def cadastroUser(request):
-    return render(request, 'sistema/cadastroUser.html')
+    if request.method == 'POST':
+        form = UsuarioForm(request.POST)
+        
+        if form.is_valid():
+            form.save() 
+            return redirect('acesso')
+            
+    else:
+        
+        form = UsuarioForm()
+    return render(request, 'sistema/cadastroUser.html', {'form': form})
+    
+    
 
 def consultarPac(request):
     return render(request, 'sistema/consultarPac.html')
