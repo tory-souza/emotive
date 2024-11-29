@@ -2,101 +2,154 @@
 
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EMOTIVE+</title>
     <link rel="icon" href="{% static 'img/logocadastro.png'%}" type="image/x-icon">
     <link rel="stylesheet" href="{% static 'css/cadastroUser.css'%}">
+    <script src="{% static 'script/cadastroUser.js' %}"></script>
 </head>
+
 <body>
-        <header>
-            <div class="logo">
-                <img src="{% static 'img/logoComNome.png'%}" alt="">
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="index">Página Inicial</a></li>
-                    <li><a href="#">Como Usar</a></li>
-                    <li><a href="login">Fazer Login</a></li>
-                </ul>
-            </nav>
-        </header>
-       
-        <div class="container">
-            <div class="forme_cadastro">
-                <form action="/submit" method="post">
-                    <img src="{% static 'img/logoComNomecadastro.png'%}" alt="">
-                    <label for="nome">Nome:</label>
-                    <input type="text" id="nome_cadastro" name="nome" required>
+    <header>
+        <div class="logo">
+            <img src="{% static 'img/logoComNome.png' %}" alt="">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Página Inicial</a></li>
+                <li><a href="#">Como Usar</a></li>
+                <li><a href="login.html">Fazer Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="forme_cadastro">
+            {% block title %}{% endblock %}
+
+            {% block content %}
+            <h1>{% if form.instance.pk %}{% else %}{% endif %} </h1>
+            <form method="post">
+                {% csrf_token %}
+                
+                
+                <img src="{% static 'img/logoComNomecadastro.png'%}" alt="">
+                <label for="nome">Nome:</label>
+                {{ form.nome }}
+
+                <br>
+                
+
+                <label for="email">Email: </label>
+                {{ form.email }}
 
                 <br>
 
-                    <label for="cpf">CPF: </label>
-                    <input type="number" id="cpf_cadastro" required>
+                <label for="cpf">CPF: </label>
+                {{ form.cpf }}
+
 
                 <br>
 
                 <label for="endereco">Endereço: </label>
-                <input type="text" id="residence" required>
+                {{ form.endereco }}
+
+                <br>
+                <label for="telefone">Telefone: </label>
+                {{ form.telefone }}
 
                 <br>
 
-                    <label for="idade">Idade: </label>
-                    <input type="number" id="idade_cadastro" required>
-                    
-                <br>
 
-                    <label for="sexo">Sexo: </label>
-                    <select id="sexo" name="sexo">
-                        <option value="masculino">Masculino</option>
-                        <option value="feminino">Feminino</option>
-                        <option value="outro">Outro</option>
-                    </select>
-                    
-                <br>
 
-                    <label for="datanascimento">Data de Nasimento: </label>
-                    <input type="date" id="datanascimento_cadastro" required>
-                    
+                <label for="{{ form.sexo.id_for_label }}">Sexo: </label>
+                <select id="sexo" name="sexo">
+                    <option value="" selected>Selecione</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="feminino">Feminino</option>
+                    <option value="outro">Outro</option>
+                </select>
 
                 <br>
 
-                    <label for="tipodoenca">Tipo de Doença Cronica: </label>
-                    <select name="tipodoenca" id="tipodoenca">
-                        <option value="">Selecione</option>
-                        <option value="doencas-cardiovasculares">Doenças Cardiovasculares</option>
-                        <option value="hiv">HIV</option>
-                        <option value="Diabete">Diabetes</option>
-                        <option value="Obesidade">Obesidade</option>
-                        <option value="Cancer>">Cancer</option>
-                        <option value="avc-ou-ave">AVC ou AVE</option>
-                        <option value="Artrite-e-Artrose">Artrite e Artrose</option>
-                        <option value="Transtornos-Mentais">Transtornos Mentais</option>
-                        <option value="Doenças-Hepaticas-Cronicas">Doenças Hepáticas Crônicas</option>
-                        <option value="Doenças-Endocrinas-e-Metabolicas">Doenças Endócrinas e Metabólicas</option>
-                        <option value="Osteoporose">Osteoporose</option>
-                        <option value="Esclerose-Multipla">Esclerose Múltipla</option>
-                        <option value="Doencas-Renais-Cronicas">Doenças Renais Crônicas</option>
-                        <option value="Doenca-de-Parkinson">Doença de Parkinson</option>
-                        <option value="Doenca-de-Alzheimer ">Doença de Alzheimer  </option>
-                    </select>
-
+                <label for="dataNascimento">Data de Nasimento: </label>
+                {{ form.dataNascimento }}
 
                 <br>
+                <label for="{{ form.tipoUsuario.id_for_label }}">Escolha uma opção:</label>
+                <select name="tipoUsuario" id="id_tipoUsuario" onchange="toggleTipoDoenca()">
+                    <option value="" selected>Selecione</option>
+                    <option value="A">Paciente</option>
+                    <option value="B">Medico</option>
 
-                    <label for="senha">Senha: </label>
-                    <input type="password" id="senha_cadastro" required>
-                    <br>
-                    <label for="senha"> Confirmar Senha: </label>
-                    <input type="password" id="senha_cadastro" required>
-                    <br><br>
-                    <input type="button" value="Cadastrar">
-                </form>
-            </div>
-        </div>    
-            
-        <footer>
-            <p>&copy;2024 Meu Site. Todos os Direitos Resevados.</p>
-        </footer>
+                </select> <!-- Gera o select para 'tipoUsuario' -->
+                <br>
+
+                <label for="{{ form.tipoDoenca.id_for_label }}">Tipo de Doença Cronica: </label>
+                <select name="tipoDoenca" id="tipoDoenca">
+                    <option value="" selected>Selecione</option>
+                    <option value="doencas-cardiovasculares">Doenças Cardiovasculares</option>
+                    <option value="hiv">HIV</option>
+                    <option value="Diabete">Diabetes</option>
+                    <option value="Obesidade">Obesidade</option>
+                    <option value="Cancer">Cancer</option>
+                    <option value="avc-ou-ave">AVC ou AVE</option>
+                    <option value="Artrite-e-Artrose">Artrite e Artrose</option>
+                    <option value="Transtornos-Mentais">Transtornos Mentais</option>
+                    <option value="Doenças-Hepaticas-Cronicas">Doenças Hepáticas Crônicas</option>
+                    <option value="Doenças-Endocrinas-e-Metabolicas">Doenças Endócrinas e Metabólicas</option>
+                    <option value="Osteoporose">Osteoporose</option>
+                    <option value="Esclerose-Multipla">Esclerose Múltipla</option>
+                    <option value="Doencas-Renais-Cronicas">Doenças Renais Crônicas</option>
+                    <option value="Doenca-de-Parkinson">Doença de Parkinson</option>
+                    <option value="Doenca-de-Alzheimer ">Doença de Alzheimer </option>
+                </select>
+
+                
+
+                
+
+                <label for="senha">Senha: </label>
+                {{ form.senha }}
+                <br>
+
+                <br><br>
+                
+                <button class="cadastrar" type="submit">Cadastrar</button>
+            </form>
+        </div>
+    </div>
+     <!-- Script para controlar a exibição do campo "Tipo de Doença" -->
+     <!-- Script para controlar a exibição do campo "Tipo de Doença" -->
+    <script>
+        // Função para mostrar ou esconder o campo "Tipo de Doença"
+        function toggleTipoDoenca() {
+            const tipoUsuario = document.getElementById('id_tipoUsuario').value;
+            const tipoDoenca = document.getElementById('tipoDoenca'); // Campo select
+
+            if (tipoUsuario === 'A') { // Se "Paciente" for selecionado
+                tipoDoenca.style.display = 'block'; // Exibe o campo tipoDoenca
+                tipoDoenca.previousElementSibling.style.display = 'inline'; // Exibe o label associado
+            } else { // Se "Médico" for selecionado ou nenhuma opção
+                tipoDoenca.style.display = 'none'; // Esconde o campo tipoDoenca
+                tipoDoenca.previousElementSibling.style.display = 'none'; // Esconde o label associado
+            }
+        }
+
+        // Chama a função ao carregar a página
+        window.onload = toggleTipoDoenca;
+    </script>
+        
+
+
+
+    <footer>
+        <p>&copy;2024 Meu Site. Todos os Direitos Resevados.</p>
+    </footer>
+    {% endblock %}
+</body>
+
 </html>

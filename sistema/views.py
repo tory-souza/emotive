@@ -1,7 +1,6 @@
-from django.shortcuts import render, get_object_or_404, redirect
-from .models import Paciente
-from django.contrib import messages
-from .forms import MedicoForm, PacienteForm, DiarioForm, ConsultaForm
+from django.shortcuts import render,redirect
+from .models import Usuario
+from .forms import UsuarioForm
 
 def index(request):
     return render(request, 'sistema/index.html')
@@ -11,19 +10,18 @@ def acesso(request):
 
 def cadastroUser(request):
     if request.method == 'POST':
-        cpf = request.POST ['cpf']
-        senha = request.POST ['senha']
-        confirmar_senha = request.POST ['confirmar_senha']
+        form = UsuarioForm(request.POST)
         
-        if senha != confirmar_senha:
-            messages.error(request, 'As senhas não coincidem.')
-        elif Paciente.objects.filter(cpf=cpf).exists():
-            messages.error(request, 'o nome de usúario já está em uso.')
-        else:
-            Paciente.objects.create(cpf=cpf, senha=senha)
-            messages.success(request, 'Cadastrado com sucesso!.')
-            return redirect('login')
-    return render(request, 'sistema/cadastroUser.html')
+        if form.is_valid():
+            form.save() 
+            return redirect('acesso')
+            
+    else:
+        
+        form = UsuarioForm()
+    return render(request, 'sistema/cadastroUser.html', {'form': form})
+    
+    
 
 def consultarPac(request):
     return render(request, 'sistema/consultarPac.html')
