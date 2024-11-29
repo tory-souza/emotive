@@ -1,3 +1,4 @@
+/* Reset de estilo básico */
 * {
     margin: 0;
     padding: 0;
@@ -6,157 +7,336 @@
 
 body {
     font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-    height: 100vh; 
     background-color: #f4f4f4;
-    padding: 20px;
     overflow-x: hidden;
+    min-height: 100vh; /* Garante que a altura da página seja pelo menos 100% da altura da tela */
+    display: flex;
+    flex-direction: column;
 }
 
-header {
-    position: absolute; 
-    top: 20px; 
-    right: 20px;
-    background-color: #487ae6;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 8px;
+/* Cabeçalho */
+header, .header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0; /* Fixa no topo */
+    z-index: 2; /* Garante que o cabeçalho fique acima de outros elementos */
 }
 
-header nav ul {
+/* Estilo do logo */
+.header .logo img {
+    width: 200px;
+}
+
+/* Navegação */
+.nav ul {
     list-style-type: none;
     display: flex;
-    gap: 20px;
 }
 
-header nav ul li {
-    display: inline-block;
+.nav ul li {
+    margin-left: 20px;
 }
 
-header nav ul li a {
-    color: white;
+.nav ul li a {
+    color: #226716;
     text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.nav ul li a:hover {
+    text-decoration: none;
+    color: #ffa537;
+}
+nav ul li a, .btlogin, .cta-button {
+    text-decoration: none;
+    color: white;
     font-weight: bold;
 }
 
-.intesUser {
-    text-align: center;
-    max-width: 400px;
-    width: 100%;
-    padding: 30px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.intesUser h1 {
-    margin-bottom: 20px;
-    color: #333;
-}
-
-.intesUser img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
-
-button {
+.btlogin, .cta-button, .card-btn {
     padding: 10px 20px;
-    font-size: 16px;
-    color: white;
-    background-color: #007BFF;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: 5px;
-    transition: background-color 0.1s ease, transform 0.1s ease;
+    background-color: #5bb450;
+    border-radius: 25px;
+    transition: background-color 0.3s;
 }
 
-button.forte:hover {
-    background-color: #ff0000;
+.btlogin:hover, .cta-button:hover, .card-btn:hover {
+    background-color: #3b8c2e;
 }
 
-button.medio:hover {
-    background-color: #bb7204;
+/* Seção de corpo interativo */
+.container {
+    padding: 50px;
+    background-color: whitesmoke;
+    text-align: center;
+    flex-grow: 1; /* Faz com que o conteúdo se expanda para preencher o espaço restante */
 }
 
-button.fraco:hover {
-    background-color: #00b30f;
-}
-
-button:active {
-    transform: scale(0.98);
-    background-color: #0056b3;
-}
-
-.canvas-container { 
-    position: relative; 
-    display: inline-block; 
-} 
-
-.canvas-container img { 
-    display: block; 
-} 
-
-.canvas-container canvas { 
-    position: absolute; 
-    top: 0; 
-    left: 0; 
-}
-
-#boneco {
+.canvas-container {
     position: relative;
-    max-width: 100%; /* Imagem será responsiva */
-    height: auto;
-    display: block;
-    margin: 0 auto;
+    display: inline-block;
 }
 
 .ponto {
     position: absolute;
-    width: 10px;
-    height: 10px;
+    width: 11px;
+    height: 11px;
+    background-color: rgba(255, 0, 0, 0.7);
     border-radius: 50%;
-    background-color: red;
     cursor: pointer;
 }
 
 #informacao {
     margin-top: 20px;
-    padding: 10px;
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    max-width: 300px;
-    margin: 20px auto;
-    font-size: 16px;
+    font-size: 18px;
     color: #333;
 }
 
-/* Ajustes de estilo para maior clareza */
-.ponto:hover {
-    background-color: darkred;
+/* Botões */
+button {
+    font-size: 18px;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
 }
 
-/* Responsividade para dispositivos menores */
-@media (max-width: 768px) {
-    body {
+.forte {
+    background-color: #d9534f;
+    color: white;
+}
+
+.medio {
+    background-color: #f0ad4e;
+    color: white;
+}
+
+.fraco {
+    background-color: #5bc0de;
+    color: white;
+}
+
+/* Rodapé */
+.footer {
+    text-align: center;
+    background-color: #226716;
+    color: white;
+    padding: 20px;
+    width: 100%;
+    position: relative;
+    margin-top: auto; /* Garante que o rodapé fique na parte inferior da tela */
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+/* Sobre */
+.sobre {
+    background-color: white;
+    display: flex;
+    gap: 20px;
+}
+
+.sobreTexto {
+    padding: 20px;
+    font-size: 1.2em;
+    color: #555;
+    text-align: left;
+}
+
+.sobreImagem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.sobreTexto{
+    background-color: white;
+}
+.contentbo{
+    background-color: white;
+}
+/* Rodapé */
+.footer {
+    background-color: #226716;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    background: rgba(34, 103, 22, 0.9);
+    margin-top: auto; /* Garante que o rodapé fique no final da tela */
+}
+
+/* Estilo da imagem no rodapé */
+.imagem_lous {
+    align-self: center;
+    max-width: 425px;
+}
+
+.emailfooter {
+    color: #000000;
+}
+
+.emailtermos{
+    color: white;
+}
+
+form img {
+    border-radius: 25%;
+    align-items: center;
+}
+.boneco{
+    width: 400px;
+}
+/* Media Query para iPhone SE (aproximadamente 375px de largura) */
+@media screen and (max-width: 375px) {
+    /* Ajustes para o cabeçalho */
+    .header .logo img {
+        width: 150px; /* Reduzir o tamanho do logo para dispositivos pequenos */
+    }
+
+    /* Ajustar os links da navegação */
+    .nav ul li a {
+        font-size: 16px; /* Fonte menor para caber melhor na tela */
+    }
+
+    /* Ajustes no conteúdo principal */
+    .container {
+        padding: 20px; /* Reduzir o padding para economizar espaço */
+    }
+
+    .canvas-container {
+        width: 100%; /* Garantir que o canvas não ultrapasse a tela */
+    }
+
+    /* Ajustes nos botões */
+    button {
+        font-size: 16px; /* Fontes dos botões menores */
+        padding: 8px 16px; /* Menor padding nos botões */
+    }
+
+    /* Ajustes na seção Sobre */
+    .sobre {
+        flex-direction: column; /* Empilhar as colunas da seção "Sobre" */
+        gap: 10px; /* Menor espaço entre as colunas */
+    }
+
+    .sobreTexto {
+        font-size: 1em; /* Texto menor em telas pequenas */
+        padding: 10px; /* Menor padding para a seção */
+    }
+
+    .sobreImagem {
+        width: 100%; /* Garantir que a imagem se ajuste à largura da tela */
+        height: auto; /* Manter a proporção da imagem */
+    }
+
+    /* Ajustes no rodapé */
+    .footer {
+        padding: 10px 0; /* Menor padding no rodapé */
+        font-size: 14px; /* Texto menor no rodapé */
+    }
+
+    .footer a {
+        font-size: 14px; /* Ajustar o tamanho da fonte do link no rodapé */
+    }
+
+    /* Ajuste na imagem do boneco */
+ /* Contêiner do boneco para manter a imagem e os pontos dentro */
+.boneco-container {
+    position: relative; /* Para os pontos se posicionarem dentro da imagem */
+    width: 100%; /* A largura da imagem vai se ajustar */
+    max-width: 400px; /* Limite máximo de largura */
+}
+
+.boneco {
+    width: 100%; /* A imagem ocupa toda a largura do contêiner */
+    height: auto; /* Mantém a proporção da imagem */
+}
+
+/* Estilo dos pontos */
+.ponto {
+    position: absolute;
+    width: 11px; /* Tamanho fixo do ponto */
+    height: 11px; /* Tamanho fixo do ponto */
+    background-color: rgba(255, 0, 0, 0.7);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Media Query para telas menores, como iPhone SE ou dispositivos móveis */
+@media screen and (max-width: 375px) {
+    .nav ul{
+        display: table-cell;
         padding: 10px;
     }
-
-    .intesUser {
-        padding: 20px;
+    .nav ul li a {
+        padding: 2px;
+    }
+    /* Ajuste da largura do contêiner do boneco */
+    .boneco-container {
+        max-width: 250px; /* Ajusta a largura para telas menores */
     }
 
-    header {
-        top: 10px;
-        right: 10px;
+    /* Ajustando o tamanho dos pontos */
+    .ponto {
+        width: 8px;  /* Reduz o tamanho dos pontos para telas menores */
+        height: 8px; /* Reduz o tamanho dos pontos para telas menores */
     }
 
-    button {
-        width: 100%;
-        margin: 5px 0;
+    /* Ajuste nas posições dos pontos para que se ajustem com a tela */
+    .ponto[data-area="Cabeça"] { top: 5%; left: 26%; }
+    .ponto[data-area="Nuca"] { top: 15%; left: 71.4%; }
+    .ponto[data-area="Peito Direito"] { top: 28%; left: 20%; }
+    .ponto[data-area="Peito Esquerdo"] { top: 28%; left: 32%; }
+    .ponto[data-area="Ombro Esquerdo"] { top: 22%; left: 62%; }
+    .ponto[data-area="Ombro Direito"] { top: 22%; left: 81%; }
+    .ponto[data-area="Braço Direito"] { top: 40%; left: 13%; }
+    .ponto[data-area="Braço Esquerdo"] { top: 40%; left: 39%; }
+    .ponto[data-area="Mão Direito"] { top: 52%; left: 10%; }
+    .ponto[data-area="Mão Esquerda"] { top: 52%; left: 42%; }
+    .ponto[data-area="Pulso Esquerdo"] { top: 52%; left: 56%; }
+    .ponto[data-area="Pulso Direito"] { top: 52%; left: 87%; }
+    .ponto[data-area="Barriga"] { top: 40%; left: 26%; }
+    .ponto[data-area="Coluna"] { top: 35%; left: 71%; }
+    .ponto[data-area="Costela"] { top: 45%; left: 31.8%; }
+    .ponto[data-area="Cotuvelo Esquerdo"] { top: 40%; left: 58%; }
+    .ponto[data-area="Cotuvelo Direito"] { top: 40%; left: 85%; }
+    .ponto[data-area="Virilha/Púbica"] { top: 50%; left: 26%; }
+    .ponto[data-area="Glúteos"] { top: 50%; left: 68%; }
+    .ponto[data-area="Glúteos"] { top: 50%; left: 75%; }
+    .ponto[data-area="Cóccix"] { top: 45%; left: 75%; }
+    .ponto[data-area="Coxa direita"] { top: 60%; left: 21%; }
+    .ponto[data-area="Coxa esquerda"] { top: 60%; left: 31%; }
+    .ponto[data-area="Posterior Coxa Esquerda"] { top: 60%; left: 67%; }
+    .ponto[data-area="Posteior Coxa Direita"] { top: 60%; left: 75%; }
+    .ponto[data-area="Joelho direita"] { top: 70%; left: 22%; }
+    .ponto[data-area="Joelho esquerda"] { top: 70%; left: 30%; }
+    .ponto[data-area="Perna direita"] { top: 80%; left: 22%; }
+    .ponto[data-area="Perna esquerda"] { top: 80%; left: 30%; }
+    .ponto[data-area="Perna esquerda"] { top: 80%; left: 30%; }
+    .ponto[data-area="Posterior Perna Esquerda"] { top: 80%; left: 67%; }
+    .ponto[data-area="Posterior Perna Direita"] { top: 80%; left: 75%; }
+    .ponto[data-area="Tendão Esquerdo"] { top: 93%; left: 67%; }
+    .ponto[data-area="Tendão direita"] { top: 93%; left: 75%; }
+    .ponto[data-area="Pé direita"] { top: 93%; left: 23%; }
+    .ponto[data-area="Pé esquerda"] { top: 93%; left: 29%; }
     }
+
 }

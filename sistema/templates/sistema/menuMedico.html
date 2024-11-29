@@ -10,16 +10,23 @@
     <link rel="stylesheet" href="{% static 'css/menuMedico.css'%}">
 </head>
 <body>
-    <header>
-        <nav>
+    <!-- Cabeçalho -->
+    <header class="header">
+        <div class="logo">
+            <img src="{% static 'img/logoComNome.png'%}" alt="Logo Emotive+">
+        </div>
+        <nav class="nav">
             <ul>
-                <li><a href="index.html">Página Inicial</a></li>
-                <li><a href="#">Sobre Nós</a></li>
-                <li><a href="loginmedico.html">Fazer Logout</a></li>
-                <br>
+                <li><a href="/sistema">Página inicial</a></li>
+                <li><a href="dicasalimentacao">Dicas de Alimentação</a></li>
+                <li><a href="#">Como usar</a></li>
+                <li><a href="acesso">Contato</a></li>
+                <li><a class="btlogin" href="login">Fazer Logout</a></li>
             </ul>
         </nav>
     </header>
+
+    <!-- Contêiner principal do menu -->
     <div class="container">
         <div class="box">
             <nav>
@@ -27,14 +34,34 @@
                     <img src="{% static 'img/logo.png'%}" alt="Logo Médica">
                 </div>
                 <ul>
-                    <li><a href="#">Olá Médica</a></li>
-                    <li><a href="consultarPac.html">Consultar Paciente</a></li>
-                    <li><a href="pacienteRisco.html">Pacientes em risco</a></li>
-                    <li><a href="consultasDaSemana..html">Consultas da semana</a></li>
+                    <li><a class="doctorlistwork" href="#">Olá,[Nome]?</a></li>
+                    <li><a class="doctorlistwork" href="consultarPac">Consultar Paciente</a></li>
+                    <li><a class="doctorlistwork" href="pacienteRisco">Pacientes em risco</a></li>
+                    <li><a class="doctorlistwork" href="consultasDaSemana">Consultas da semana</a></li>
                 </ul>
             </nav>
         </div>
     </div>
-    
+
+    <!-- Seção Sobre a Emotive+ -->
+    <section class="sobre">
+        <div id="sobre" class="sobreTexto">
+            <br>
+            <br>
+            <h2>Sobre a Emotive+</h2>
+            <p>Conheça mais sobre a nossa história e o compromisso com a sua saúde.</p>
+            <p><a class="emailfooter" href="mailto:contato@emotivesaude.com.br">Contato: contato@emotivesaude.com.br</a></p>
+        </div>
+
+        <div class="sobreImagem">
+            <img src="{% static 'img/redessociais.png'%}" alt="Cuide da saúde com qualidade">
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <p>&copy; 2024 Turma 232 - Todos os direitos reservados</p>
+        <p><a class="emailtermos" href="termos">Termos de Uso | Políticas de Privacidade</a></p>
+    </footer>
 </body>
 </html>

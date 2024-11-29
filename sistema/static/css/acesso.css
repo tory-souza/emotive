@@ -1,11 +1,61 @@
-body { display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    height: 100vh; 
-    margin: 0; 
-    background-color: #f4f4f4; 
-    font-family: Arial, sans-serif; 
-} 
+/* Reset básico de margin e padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column; /* Empilha o conteúdo verticalmente */
+    justify-content: flex-start; /* Alinha no topo */
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+}
+
+/* Cabeçalho */
+header, .header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0; /* Fixa no topo */
+    z-index: 2; /* Garante que o cabeçalho fique acima de outros elementos */
+}
+
+/* Estilo do logo */
+.header .logo img {
+    width: 250px;
+}
+
+/* Navegação */
+.nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+.nav ul li {
+    margin-left: 20px;
+}
+
+.nav ul li a {
+    color: #226716;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.nav ul li a:hover {
+    text-decoration: none;
+    color: #ffa537;
+}
+
 .UserLogado { 
     color: white;
     text-align: center; 
@@ -14,6 +64,8 @@ body { display: flex;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
     padding: 20px; 
 } 
+
+/* Botões */
 button { 
     background-color: #EEEEE0; 
     color: black; 
@@ -25,7 +77,156 @@ button {
     margin: 10px; 
     transition: background-color 0.3s ease; 
 } 
-button:hover 
-{ 
+
+button:hover { 
     background-color: #7bce6d;
+}
+
+nav ul li a, .btlogin, .cta-button {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.btlogin, .cta-button, .card-btn {
+    padding: 10px 20px;
+    background-color: #5bb450;
+    border-radius: 25px;
+    transition: background-color 0.3s;
+}
+
+.btlogin:hover, .cta-button:hover, .card-btn:hover {
+    background-color: #3b8c2e;
+}
+
+/* Sobre */
+.sobre {
+    background-color: white;
+    display: flex;
+    gap: 20px;
+}
+
+.sobreTexto {
+    padding: 20px;
+    font-size: 1.2em;
+    color: #555;
+    text-align: left;
+}
+
+.sobreImagem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.sobreTexto{
+    background-color: white;
+}
+
+/* Rodapé */
+.footer {
+    background-color: #226716;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    background: rgba(34, 103, 22, 0.9);
+    margin-top: auto; /* Garante que o rodapé fique no final da tela */
+}
+
+/* Estilo da imagem no rodapé */
+.imagem_lous {
+    align-self: center;
+    max-width: 425px;
+}
+
+.emailfooter {
+    color: #000000;
+}
+
+.emailtermos{
+    color: white;
+}
+
+form img {
+    border-radius: 25%;
+    align-items: center;
+}
+
+/* Ajuste para o conteúdo principal, evitando que sobreponha o cabeçalho */
+main {
+    flex: 1; /* Faz o conteúdo principal ocupar o espaço restante */
+    padding: 180px;
+}
+
+
+/* Media Query para telas pequenas (como o iPhone SE com 400px de largura) */
+@media screen and (max-width: 700px) {
+    .header .logo img {
+        max-height: 5%; /* Logo menor para telas pequenas */
+    }
+
+    .nav ul li a {
+        font-size: 14px; /* Fonte menor */
+    }
+
+    .UserLogado {
+        text-align: center;
+        width: 900%; /* Ajuste no tamanho para telas pequenas */
+    }
+
+    .UserLogado h1 {
+        font-size: 14px; /* Reduz o tamanho da fonte */
+    }
+
+    button {
+        font-size: 14px; /* Tamanho de botão ajustado */
+        padding: 8px 12px; /* Ajuste no padding */
+    }
+
+    .sobreTexto {
+        font-size: 1em; /* Texto reduzido para telas menores */
+    }
+
+    /* Ajustar o rodapé */
+    .footer p {
+        font-size: 14px; /* Texto menor no rodapé */
+    }
+
+    .nav ul {
+        flex-direction: column; /* Os links da navegação se empilham verticalmente em telas menores */
+        align-items: center; /* Centraliza os links */
+        list-style-type: none;
+        display: table-cell;
+
+    }
+
+    .nav ul li {
+        margin: 10px; /* Maior espaçamento entre os links */
+    }
+
+    /* Ajustes adicionais para garantir boa usabilidade */
+    .sobre {
+        flex-direction: column; /* Flex em coluna em telas pequenas */
+        padding: 10px;
+    }
+
+    .sobreTexto {
+        padding: 10px;
+        font-size: 14px; /* Texto um pouco menor em telas pequenas */
+    }
+
+    .sobreImagem img {
+        width: 100%; /* A imagem se ajusta à largura da tela */
+        height: auto;
+    }
+
+    /* Ajustes no layout de footer */
+    .footer {
+        padding: 10px 0;
+        font-size: 12px; /* Texto menor no rodapé */
+    }
 }

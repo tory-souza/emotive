@@ -27,6 +27,9 @@ def login(request):
 def loginmedico(request):
     return render(request, 'sistema/loginmedico.html')
 
+def mensagemdia(request):
+    return render(request, 'sistema/mensagemdia.html')
+
 def menuMedico(request):
     return render(request, 'sistema/menuMedico.html')
 
@@ -38,3 +41,6 @@ def reset(request):
 
 def sonopaciente(request):
     return render(request, 'sistema/sonopaciente.html')
+
+def termos(request):
+    return render(request, 'sistema/termos.html')

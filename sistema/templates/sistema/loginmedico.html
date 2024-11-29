@@ -5,42 +5,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/lgmedico.css'%}">
+    <link rel="stylesheet" href="{% static 'css/login.css'%}">
     <title>Emotive+</title>
     <link rel="icon" href="{% static 'img/logo.png'%}">
 </head>
 <body>
-    <header>
-    <nav>
-        <ul>
-            <li><a href="index.html">Página Inicial</a></li>
-            <li><a href="#">Sobre Nós</a></li>
-            <li><a href="login.html">Login Paciente</a></li>
+    <!-- Cabeçalho -->
+    <header class="header">
+        <div class="logo">
+            <img src="{% static 'img/logoComNome.png'%}" alt="Logo Emotive+">
+        </div>
+        <nav class="nav">
+            <ul>
+                <li><a href="/sistema">Página inicial</a></li>
+                <li><a href="dicasalimentacao">Dicas de Alimentação</a></li>
+                <li><a href="#">Como usar</a></li>
+                <li><a href="loginmedico">Contato</a></li>
+                <li><a class="btlogin" href="login">Login Paciente</a></li>
+            </ul>
+        </nav>
+    </header>
+        <div class="boasvindas">
+            <section id="acessar-conta" class="login"> 
+            <h2>Bem Vindos!</h2> 
+            <img class="usuariosloginacess" src="{% static 'img/medicosloginacessh.jpg'%}">
+            <p>Insira suas Credenciais para Realizar o Acesso a sua Página Interativa</p>
+            <p>Área de Login dos Médicos e Medicas!</p> 
             <br>
-        </ul>
-    </nav>
-</header>
-    <div class="boasvindas"> 
-        <h2>Bem Vindo!</h2> 
-        <p>Insira suas Credenciais para Realizar o Acesso a sua Página Interativa</p>
-        <img class="imglogin" src="{% static 'img/logo.png'%}"> 
-    </div> 
-        <section id="acessar-conta" class="login"> 
             <h2>Acessar Conta</h2> 
             <div> 
-                <label>Informe seu CPF <input type="text" id="cpfLogin" placeholder="Digite seu CPF" name="cpfLogin" /></label> 
+                <label>Informe seu CPF:  <input type="text" id="cpfLogin" placeholder="Digite seu CPF" name="cpfLogin" /></label> 
+                <label>Insira sua Senha: <input type="password" id="senhaLogin" placeholder="Digite sua Senha" name="senhaLogin" /></label> 
             </div> 
-            <div> 
-                <label>Senha <input type="password" id="senhaLogin" placeholder="Digite sua Senha" name="senhaLogin" /></label> 
-            </div> 
-            <div> <button><a href="menuMedico.html">Login</a></button> 
-                <a id="resetext" href="reset.html">Recuperar Senha</a> 
-        </div>  
-    </section>
+            <div> <a class="btlogin" href="menuMedico">LOGIN</a> 
+                <a id="resetext" href="reset">Recuperar Senha</a> 
+        </div>
+<div>  
+</section>
     <br> 
     <br>
-</body>
-<footer>
-    <p>&copy; 2024 - Turma 232. Todos os Direitos reservados.</p>
-</footer>
+    <div>
+        <section class="sobre">
+            <div id="sobre" class="sobreTexto">
+            <br><br><br>
+            <h2>Sobre a Emotive+</h2>
+            <p>Conheça mais sobre a nossa história e o compromisso com a sua saúde.</p>
+            <p><a class="emailfooter" href="mailto:contato@emotivesaude.com.br">Contato: contato@emotivesaude.com.br</a></p>
+    </div>
+
+    <div class="sobreImagem">
+        <img src="{% static 'img/redessociais.png'%}" alt="Cuide da saúde com qualidade">
+    </div>
+</section>
+<div>
+    <section>
+<!-- Rodapé -->
+        <footer class="footer">
+            <p>&copy; 2024 Turma 232 - Todos os direitos reservados</p>
+            <p><a class="emailtermos" href="termos">Termos de Uso | Políticas de Privacidade</a></p>
+        </footer>
+    </section>
+</div>
+    </body>
 </html>

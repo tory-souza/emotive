@@ -1,12 +1,94 @@
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start; /* Alinha o conteúdo ao topo */
     height: 100vh;
     margin: 0;
-    background-color: #f9f9f9;
-    font-family: Arial, sans-serif; 
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+}
 
+/* Cabeçalho */
+header, .header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100; /* O cabeçalho deve ficar sempre no topo */
+}
+
+/* Estilo do logo */
+.header .logo img {
+    width: 250px;
+}
+
+/* Navegação */
+.nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+.nav ul li {
+    margin-left: 20px;
+}
+
+.nav ul li a {
+    color: #226716;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.nav ul li a:hover {
+    text-decoration: none;
+    color: #ffa537;
+}
+
+/* Botões */
+button { 
+    background-color: #EEEEE0; 
+    color: black; 
+    padding: 10px 15px; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-size: 20px; 
+    margin: 10px; 
+    transition: background-color 0.3s ease; 
+} 
+
+button:hover { 
+    background-color: #7bce6d;
+}
+
+/* Correção de centralização da div de reset */
+.resetlogin {
+    display: block;
+    justify-content: flex-end; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 300px;
+    text-align: center;
+    margin-top: 100px; /* Ajuste maior para garantir que o conteúdo não sobreponha o cabeçalho */
+    z-index: 10; /* Garante que o conteúdo tenha um nível adequado de empilhamento */
+    position: relative; /* Necessário para usar o z-index */
+}
+
+/* Estilo do formulário de redefinir senha */
 .redefinirlogin {
     background-color: #f4f4f4;
     padding: 20px;
@@ -16,20 +98,22 @@ body {
     text-align: center;
 }
 
+/* Cabeçalho da redefinição */
 .redefinirlogin h2 {
     color: #333;
     margin-bottom: 20px;
 }
 
+/* Formulário */
 .redefinirlogin div {
     margin-bottom: 15px;
 }
 
 .redefinirlogin label {
-    display: flex;
-    flex-direction: column;
+    display: block;
     color: #333;
     font-size: 16px;
+    margin-bottom: 5px;
 }
 
 .redefinirlogin input[type="text"], 
@@ -38,7 +122,8 @@ body {
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    width: calc(100% - 22px);
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .redefinirlogin button {
@@ -51,10 +136,11 @@ body {
     font-size: 16px;
     transition: background-color 0.3s ease;
     margin-top: 10px;
+    width: 100%;
 }
 
 .redefinirlogin button:hover {
-    background-color: #ffffff;
+    background-color: #3b6fb4;
 }
 
 .redefinirlogin a {
@@ -76,6 +162,63 @@ body {
 }
 
 #cpfreset {
-    text-decoration: underline;
     color: #487ae6;
+    text-decoration: underline;
+}
+
+/* Sobre */
+.sobre {
+    background-color: white;
+    display: flex;
+    gap: 20px;
+}
+
+.sobreTexto {
+    padding: 20px;
+    font-size: 1.2em;
+    color: #555;
+    text-align: left;
+}
+
+.sobreImagem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.sobreTexto{
+    background-color: white;
+}
+
+/* Rodapé */
+.footer {
+    background-color: #226716;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: auto; /* Garante que o rodapé fique no final da tela */
+}
+
+/* Estilo da imagem no rodapé */
+.imagem_lous {
+    align-self: center;
+    max-width: 425px;
+}
+
+.emailfooter {
+    color: #000000;
+}
+
+.emailtermos{
+    color: white;
+}
+
+form img {
+    border-radius: 25%;
+    align-items: center;
 }
