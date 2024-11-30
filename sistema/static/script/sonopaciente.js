@@ -2,7 +2,7 @@
 function selectMood(button, mood) {
     // Remover a classe "selected" de todos os botões
     const buttons = document.querySelectorAll('.mood-buttons button');
-    buttons.forEach(function(btn) {
+    buttons.forEach(function (btn) {
         btn.classList.remove('selected');
     });
 
@@ -14,8 +14,8 @@ function selectMood(button, mood) {
 }
 
 // Quando o formulário for submetido, redireciona para intensidade.html
-document.getElementById('moodForm').addEventListener('submit', function(event) {
+document.getElementById('moodForm').addEventListener('submit', function (event) {
     event.preventDefault(); // Impede o envio padrão do formulário
-    alert("Sua Mensagem foi Enviada com Sucesso!.");
+    alert("Sua Mensagem foi Enviada com Sucesso! .");
     window.location.href = 'intensidade'; // Redireciona para a página de intensidade
 });
