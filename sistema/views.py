@@ -9,7 +9,7 @@ def index(request):
     return render(request, 'sistema/index.html')
 
 def acesso(request):
-    userp=request.session.get('userp')
+    userp=request.session.get('userp', None)
     return render(request, 'sistema/acesso.html', {'userp':userp})
 
 def cadastroUser(request):
@@ -17,16 +17,17 @@ def cadastroUser(request):
         form = UsuarioForm(request.POST)
         
         if form.is_valid():
-            form.save() 
+            usuario=form.save()
+            request.session['userp'] = usuario.nome 
             return redirect('acesso')
+
+        else:
+            return render(request, 'sistema/cadastroUser.html', {'form': form})
             
     else:
-        
         form = UsuarioForm()
     return render(request, 'sistema/cadastroUser.html', {'form': form})
     
-    
-
 def consultarPac(request):
     return render(request, 'sistema/consultarPac.html')
 
@@ -50,7 +51,8 @@ def login(request):
             return redirect('acesso')
         except Usuario.DoesNotExist:
             print("Usuario não existe!")
-            return render (request,'sistema/login.html')
+            mensagem_erro = "Usuário ou senha inválidos."
+            return render(request, 'sistema/login.html', {'mensagem_erro': mensagem_erro})
             
     return render (request,'sistema/login.html')
         

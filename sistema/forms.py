@@ -11,3 +11,10 @@ class UsuarioForm(forms.ModelForm):
             'senha': forms.PasswordInput(),
             'telefone':forms.TextInput(attrs={'id': 'id_telefone'})
         }
+
+    def clean_email(self):
+        email = self.cleaned_data['email']
+        if Usuario.objects.filter(email=email).exists():
+            raise forms.ValidationError("O email já está cadastrado. Tente outro.")
+        return email    
+

@@ -43,6 +43,9 @@
             <div> <button type="submit">Login</button>
                 <a id="resetext" href="reset">Recuperar Senha</a> 
             </form>
+            {% if mensagem_erro %}
+            <p style="color: red;">{{ mensagem_erro }}</p>
+        {% endif %}
      
         </div>  
     </section>

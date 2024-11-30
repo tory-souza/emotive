@@ -9,7 +9,7 @@
     <title>EMOTIVE+</title>
     <link rel="icon" href="{% static 'img/logocadastro.png'%}" type="image/x-icon">
     <link rel="stylesheet" href="{% static 'css/cadastroUser.css'%}">
-    
+
 </head>
 
 <body>
@@ -28,21 +28,31 @@
 
     <div class="container">
         <div class="forme_cadastro">
-           
-            
+
+
             <form method="post">
                 {% csrf_token %}
-                
-                
+
+
                 <img src="{% static 'img/logoComNomecadastro.png'%}" alt="">
                 <label for="nome">Nome:</label>
                 {{ form.nome }}
 
                 <br>
-                
+
 
                 <label for="email">Email: </label>
                 {{ form.email }}
+                <!--menssagem de erro, email ja existe-->
+                {% for field in form %}
+                {% for error in field.errors %}
+                <p style="color: red;">{{ error }}</p>
+                {% endfor %}
+                {% endfor %}
+
+                {% for error in form.non_field_errors %}
+                <p style="color: red;">{{ error }}</p>
+                {% endfor %}
 
                 <br>
 
@@ -77,7 +87,7 @@
                 {{ form.dataNascimento }}
 
                 <br>
-               
+
 
 
                 <label for="{{ form.tipoDoenca.id_for_label }}">Tipo de Doença Cronica: </label>
@@ -100,25 +110,26 @@
                     <option value="Doenca-de-Alzheimer ">Doença de Alzheimer </option>
                 </select>
 
-                
 
-                
+
+
 
                 <label for="senha">Senha: </label>
                 {{ form.senha }}
                 <br>
 
                 <br><br>
-                
+
                 <button class="cadastrar" type="submit">Cadastrar</button>
             </form>
+
         </div>
     </div>
-     
+
     <footer>
         <p>&copy;2024 Meu Site. Todos os Direitos Resevados.</p>
     </footer>
-   
+
     <script>
         // Aplique a máscara de telefone no campo de telefone
         const telefoneInput = document.getElementById('id_telefone');
