@@ -9,8 +9,8 @@ def index(request):
     return render(request, 'sistema/index.html')
 
 def acesso(request):
-    usuario=Usuario.objects.last()
-    return render(request, 'sistema/acesso.html', {'usuario':usuario})
+    userp=request.session.get('userp')
+    return render(request, 'sistema/acesso.html', {'userp':userp})
 
 def cadastroUser(request):
     if request.method == 'POST':
@@ -46,6 +46,7 @@ def login(request):
 
         try:
             userp=Usuario.objects.get(email=email,senha=senha) 
+            request.session['userp']=userp.nome  ##ele salva o userp em uma sessao
             return redirect('acesso')
         except Usuario.DoesNotExist:
             print("Usuario não existe!")
@@ -54,16 +55,6 @@ def login(request):
     return render (request,'sistema/login.html')
         
 
-    
-    
-            
-
-
-
-        
-    
-
-   #return render(request, 'sistema/login.html')
 
 def loginmedico(request):
     return render(request, 'sistema/loginmedico.html')
