@@ -23,18 +23,27 @@
     <div class="boasvindas"> 
         <h2>Bem Vindo!</h2> 
         <p>Insira suas Credenciais para Realizar o Acesso a sua Página Interativa</p>
-        <img class="imglogin" src="{% static 'img/logo.png'%}"> 
+        <img class="imglogin" src="{% static 'img/logo.png' %}"> 
     </div> 
         <section id="acessar-conta" class="login"> 
             <h2>Acessar Conta</h2> 
             <div> 
-                <label>Informe seu CPF <input type="text" id="cpfLogin" placeholder="Digite seu CPF" name="cpfLogin" /></label> 
+                <form method="POST">
+                {% csrf_token %}
+                <label>Informe seu Email <input type="email" id="email" placeholder="Digite seu Email" name="email" required style="padding: 10px; 
+                    border: 1px solid #ddd; 
+                    border-radius: 5px; 
+                    width: calc(100% - 22px); "/></label>
+    
             </div> 
             <div> 
-                <label>Senha <input type="password" id="senhaLogin" placeholder="Digite sua Senha" name="senhaLogin" /></label> 
+                <label>Senha <input type="password" id="senha" placeholder="Digite sua Senha" name="senha" required/></label>
+
             </div> 
-            <div> <button><a href="acessoogin</a></button> 
+            <div> <button type="submit">Login</button>
                 <a id="resetext" href="reset">Recuperar Senha</a> 
+            </form>
+     
         </div>  
     </section>
     <br> 

@@ -9,7 +9,7 @@
     <title>EMOTIVE+</title>
     <link rel="icon" href="{% static 'img/logocadastro.png'%}" type="image/x-icon">
     <link rel="stylesheet" href="{% static 'css/cadastroUser.css'%}">
-    <script src="{% static 'script/cadastroUser.js' %}"></script>
+    
 </head>
 
 <body>
@@ -28,10 +28,8 @@
 
     <div class="container">
         <div class="forme_cadastro">
-            {% block title %}{% endblock %}
-
-            {% block content %}
-            <h1>{% if form.instance.pk %}{% else %}{% endif %} </h1>
+           
+            
             <form method="post">
                 {% csrf_token %}
                 
@@ -79,14 +77,8 @@
                 {{ form.dataNascimento }}
 
                 <br>
-                <label for="{{ form.tipoUsuario.id_for_label }}">Escolha uma opção:</label>
-                <select name="tipoUsuario" id="id_tipoUsuario" onchange="toggleTipoDoenca()">
-                    <option value="" selected>Selecione</option>
-                    <option value="A">Paciente</option>
-                    <option value="B">Medico</option>
+               
 
-                </select> <!-- Gera o select para 'tipoUsuario' -->
-                <br>
 
                 <label for="{{ form.tipoDoenca.id_for_label }}">Tipo de Doença Cronica: </label>
                 <select name="tipoDoenca" id="tipoDoenca">
@@ -122,34 +114,17 @@
             </form>
         </div>
     </div>
-     <!-- Script para controlar a exibição do campo "Tipo de Doença" -->
-     <!-- Script para controlar a exibição do campo "Tipo de Doença" -->
-    <script>
-        // Função para mostrar ou esconder o campo "Tipo de Doença"
-        function toggleTipoDoenca() {
-            const tipoUsuario = document.getElementById('id_tipoUsuario').value;
-            const tipoDoenca = document.getElementById('tipoDoenca'); // Campo select
-
-            if (tipoUsuario === 'A') { // Se "Paciente" for selecionado
-                tipoDoenca.style.display = 'block'; // Exibe o campo tipoDoenca
-                tipoDoenca.previousElementSibling.style.display = 'inline'; // Exibe o label associado
-            } else { // Se "Médico" for selecionado ou nenhuma opção
-                tipoDoenca.style.display = 'none'; // Esconde o campo tipoDoenca
-                tipoDoenca.previousElementSibling.style.display = 'none'; // Esconde o label associado
-            }
-        }
-
-        // Chama a função ao carregar a página
-        window.onload = toggleTipoDoenca;
-    </script>
-        
-
-
-
+     
     <footer>
         <p>&copy;2024 Meu Site. Todos os Direitos Resevados.</p>
     </footer>
-    {% endblock %}
+   
+    <script>
+        // Aplique a máscara de telefone no campo de telefone
+        const telefoneInput = document.getElementById('id_telefone');
+        const mask = new Inputmask('(99) 99999-9999');  // Máscara de telefone
+        mask.mask(telefoneInput);  // Aplica a máscara no campo com o id 'id_telefone'
+    </script>
 </body>
 
 </html>

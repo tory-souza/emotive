@@ -10,7 +10,7 @@ class Usuario(models.Model):
     telefone = models.CharField(max_length=20, blank=True, null=True)
     tipoDoenca = models.CharField(max_length=200)
     endereco=models.CharField(max_length=300)
-    tipoUsuario=models.CharField(max_length=100)
+    
     
 
     def __str__(self):

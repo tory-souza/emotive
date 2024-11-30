@@ -1,12 +1,16 @@
 from django.shortcuts import render,redirect
+from django.contrib.auth import authenticate, login
 from .models import Usuario
 from .forms import UsuarioForm
+from django.contrib import messages
+
 
 def index(request):
     return render(request, 'sistema/index.html')
 
 def acesso(request):
-    return render(request, 'sistema/acesso.html')
+    usuario=Usuario.objects.last()
+    return render(request, 'sistema/acesso.html', {'usuario':usuario})
 
 def cadastroUser(request):
     if request.method == 'POST':
@@ -36,7 +40,30 @@ def intensidade(request):
     return render(request, 'sistema/intensidade.html')
 
 def login(request):
-    return render(request, 'sistema/login.html')
+    if request.method=='POST':
+        email=request.POST['email']
+        senha=request.POST['senha']
+
+        try:
+            userp=Usuario.objects.get(email=email,senha=senha) 
+            return redirect('acesso')
+        except Usuario.DoesNotExist:
+            print("Usuario não existe!")
+            return render (request,'sistema/login.html')
+            
+    return render (request,'sistema/login.html')
+        
+
+    
+    
+            
+
+
+
+        
+    
+
+   #return render(request, 'sistema/login.html')
 
 def loginmedico(request):
     return render(request, 'sistema/loginmedico.html')

@@ -68,13 +68,17 @@ header nav ul li a {
     flex-direction: column; 
     color: #333; font-size: 16px; 
 } 
-.login input[type="text"], .login input[type="password"] {
+.login input[type="email"], .login input[type="password"] {
      
     padding: 10px; 
     border: 1px solid #ddd; 
     border-radius: 5px; 
     width: calc(100% - 22px); 
-} 
+}
+
+#email{
+    width: 50px;
+}
 .login button {
     background-color: #487ae6; 
     color: white; 
