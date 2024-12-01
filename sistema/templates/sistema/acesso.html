@@ -10,14 +10,16 @@
     <link rel="stylesheet" href="{% static 'css/acesso.css'%}">
     <script src="{% static 'script/acessopaciente.js'%}"></script>
 </head>
-<body> 
+<body> <form method="post">
+    {% csrf_token %}
         <div class="UserLogado"> 
-            <h1 id="greeting">Como você está hoje, [Nome]?</h1> 
+            <h1 id="greeting" name="nome">Como você está hoje, {{ userp }} ?</h1> 
             <button onclick="sendMood('Feliz')">Feliz 😀</button> 
             <button onclick="sendMood('Cansado')">Cansado 😫</button> 
             <button onclick="sendMood('Enjoado')">Enjoado 🤢</button> 
             <button onclick="sendMood('Triste')">Triste 😞</button> 
             <button onclick="sendMood('Com Dor')">Com Dor 😵‍💫</button> 
+        </form>
     </div>
 </body>
 </html>
