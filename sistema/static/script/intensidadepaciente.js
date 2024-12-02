@@ -35,6 +35,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Exibe uma mensagem e redireciona após o envio
         alert("Sua dor foi registrada.");
-        window.location.href = "mensagemdia";
+        window.location.href = "mensagemDia";
     };
 });

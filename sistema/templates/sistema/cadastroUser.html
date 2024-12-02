@@ -2,140 +2,286 @@
 
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EMOTIVE+</title>
     <link rel="icon" href="{% static 'img/logocadastro.png'%}" type="image/x-icon">
     <link rel="stylesheet" href="{% static 'css/cadastroUser.css'%}">
+    
 
+    <style>
+            /* Container principal */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Ajuste para evitar que o formulário fique centralizado verticalmente */
+            min-height: 1100x;
+            padding-top: 20px; /* Espaçamento extra no topo para evitar que o formulário sobreponha o menu */
+            background-color: #f4f4f4;
+        }
+
+        /* Estilo do formulário */
+        .forme_cadastro {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 100%;
+            max-width: 800px;
+            flex-grow: 1; /* Faz o formulário ocupar o espaço disponível */
+        }
+
+        /* Estilo das seções (fieldset) */
+        fieldset {
+            border: 2px solid #ddd;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        legend {
+            font-weight: bold;
+            padding: 0 10px;
+        }
+
+        /* Estilo das entradas lado a lado */
+        .input-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .input-item {
+            flex: 1 1 45%; /* Flexível e com largura máxima de 45% */
+            min-width: 200px;
+        }
+
+        .input-item label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* Estilo para os inputs e selects */
+        input[type="text"], input[type="email"], input[type="password"], input[type="cpf"], input[type="tel"], select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        /* Estilo do botão */
+        button.cadastrar {
+            background-color: #7ecd73;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1.1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button.cadastrar:hover {
+            background-color: #4e8d46;
+        }
+
+        /* Estilo para os erros */
+        .error {
+            color: red;
+            font-size: 0.875rem;
+        }
+
+        /* Estilo do logo */
+        .form-section.logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-section.logo img {
+            max-width: 200px;
+            width: 100%;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .forme_cadastro {
+                padding: 20px;
+            }
+
+            .input-group {
+                flex-direction: column; /* Empilha os campos em dispositivos menores */
+            }
+
+            .input-item {
+                flex: 1 1 100%; /* Faz com que os campos ocupem toda a largura em telas pequenas */
+            }
+
+            button.cadastrar {
+                width: 100%;
+            }
+        }
+
+
+    </style>
 </head>
-
 <body>
-    <header>
+    <header class="header">
         <div class="logo">
-            <img src="{% static 'img/logoComNome.png' %}" alt="">
+            <img src="{% static 'img/logoComNome.png'%}" alt="Logo Hapvida">
         </div>
-        <nav>
+        <nav class="nav">
             <ul>
-                <li><a href="index.html">Página Inicial</a></li>
-                <li><a href="#">Como Usar</a></li>
-                <li><a href="login.html">Fazer Login</a></li>
+                <li><a href="/sistema">Página inicial</a></li>
+                <li><a href="dicasalimentacao">Dicas de Alimentações</a></li>
+                <li><a href="#">Como usar</a></li>
+                <li><a href="cadastroUser">Cadastra-se</a></li>
+                <li><a href="cadastroUser">Contato</a></li>
+                <li><a class="btlogin" href="login"> Fazer login</a></li>
             </ul>
         </nav>
     </header>
-
     <div class="container">
         <div class="forme_cadastro">
-
-
             <form method="post">
                 {% csrf_token %}
-
-
-                <img src="{% static 'img/logoComNomecadastro.png'%}" alt="">
-                <label for="nome">Nome:</label>
-                {{ form.nome }}
-
-                <br>
-
-
-                <label for="email">Email: </label>
-                {{ form.email }}
-                <!--menssagem de erro, email ja existe-->
-                {% for field in form %}
-                {% for error in field.errors %}
-                <p style="color: red;">{{ error }}</p>
-                {% endfor %}
-                {% endfor %}
-
-                {% for error in form.non_field_errors %}
-                <p style="color: red;">{{ error }}</p>
-                {% endfor %}
-
-                <br>
-
-                <label for="cpf">CPF: </label>
-                {{ form.cpf }}
-
-
-                <br>
-
-                <label for="endereco">Endereço: </label>
-                {{ form.endereco }}
-
-                <br>
-                <label for="telefone">Telefone: </label>
-                {{ form.telefone }}
-
-                <br>
-
-
-
-                <label for="{{ form.sexo.id_for_label }}">Sexo: </label>
-                <select id="sexo" name="sexo">
-                    <option value="" selected>Selecione</option>
-                    <option value="masculino">Masculino</option>
-                    <option value="feminino">Feminino</option>
-                    <option value="outro">Outro</option>
-                </select>
-
-                <br>
-
-                <label for="dataNascimento">Data de Nasimento: </label>
-                {{ form.dataNascimento }}
-
-                <br>
-
-
-
-                <label for="{{ form.tipoDoenca.id_for_label }}">Tipo de Doença Cronica: </label>
-                <select name="tipoDoenca" id="tipoDoenca">
-                    <option value="" selected>Selecione</option>
-                    <option value="doencas-cardiovasculares">Doenças Cardiovasculares</option>
-                    <option value="hiv">HIV</option>
-                    <option value="Diabete">Diabetes</option>
-                    <option value="Obesidade">Obesidade</option>
-                    <option value="Cancer">Cancer</option>
-                    <option value="avc-ou-ave">AVC ou AVE</option>
-                    <option value="Artrite-e-Artrose">Artrite e Artrose</option>
-                    <option value="Transtornos-Mentais">Transtornos Mentais</option>
-                    <option value="Doenças-Hepaticas-Cronicas">Doenças Hepáticas Crônicas</option>
-                    <option value="Doenças-Endocrinas-e-Metabolicas">Doenças Endócrinas e Metabólicas</option>
-                    <option value="Osteoporose">Osteoporose</option>
-                    <option value="Esclerose-Multipla">Esclerose Múltipla</option>
-                    <option value="Doencas-Renais-Cronicas">Doenças Renais Crônicas</option>
-                    <option value="Doenca-de-Parkinson">Doença de Parkinson</option>
-                    <option value="Doenca-de-Alzheimer ">Doença de Alzheimer </option>
-                </select>
-
-
-
-
-
-                <label for="senha">Senha: </label>
-                {{ form.senha }}
-                <br>
-
-                <br><br>
-
-                <button class="cadastrar" type="submit">Cadastrar</button>
+    
+                <!-- Logo -->
+                <div class="form-section logo">
+                    <img src="{% static 'img/logoComNomecadastro.png'%}" alt="Logo">
+                </div>
+    
+                <!-- Sessão 1: Informações Pessoais (dois campos lado a lado) -->
+                <fieldset>
+                    <legend>Informações Pessoais</legend>
+                    <div class="input-group">
+                        <div class="input-item">
+                            <label for="nome">Nome:</label>
+                            {{ form.nome }}
+                        </div>
+                        <div class="input-item">
+                            <label for="email">Email:</label>
+                            {{ form.email }}
+                        </div>
+                    </div>
+    
+                    {% for field in form %}
+                        {% for error in field.errors %}
+                            <p class="error">{{ error }}</p>
+                        {% endfor %}
+                    {% endfor %}
+    
+                    {% for error in form.non_field_errors %}
+                        <p class="error">{{ error }}</p>
+                    {% endfor %}
+                </fieldset>
+    
+                <!-- Sessão 2: Endereço e Contato (dois campos lado a lado) -->
+                <fieldset>
+                    <legend>Endereço e Contato</legend>
+                    <div class="input-group">
+                        <div class="input-item">
+                            <label for="cpf">CPF:</label>
+                            {{ form.cpf }}
+                        </div>
+                        <div class="input-item">
+                            <label for="endereco">Endereço:</label>
+                            {{ form.endereco }}
+                        </div>
+                    </div>
+    
+                    <div class="input-group">
+                        <div class="input-item">
+                            <label for="telefone">Telefone:</label>
+                            {{ form.telefone }}
+                        </div>
+                    </div>
+                </fieldset>
+    
+                <!-- Sessão 3: Dados Adicionais (dois campos lado a lado) -->
+                <fieldset>
+                    <legend>Dados Adicionais</legend>
+                    <div class="input-group">
+                        <div class="input-item">
+                            <label for="sexo">Sexo:</label>
+                            <select id="sexo" name="sexo">
+                                <option value="" selected>Selecione</option>
+                                <option value="masculino">Masculino</option>
+                                <option value="feminino">Feminino</option>
+                                <option value="outro">Outro</option>
+                            </select>
+                        </div>
+                        <div class="input-item">
+                            <label for="dataNascimento">Data de Nascimento:</label>
+                            {{ form.dataNascimento }}
+                        </div>
+                    </div>
+    
+                    <div class="input-group">
+                        <div class="input-item">
+                            <label for="tipoDoenca">Tipo de Doença Crônica:</label>
+                            <select name="tipoDoenca" id="tipoDoenca">
+                                <option value="" selected>Selecione</option>
+                                <option value="doencas-cardiovasculares">Doenças Cardiovasculares</option>
+                                <option value="hiv">HIV</option>
+                                <option value="Diabete">Diabetes</option>
+                                <option value="Obesidade">Obesidade</option>
+                                <option value="Cancer">Câncer</option>
+                                <option value="avc-ou-ave">AVC ou AVE</option>
+                                <option value="Artrite-e-Artrose">Artrite e Artrose</option>
+                                <option value="Transtornos-Mentais">Transtornos Mentais</option>
+                                <option value="Doenças-Hepaticas-Cronicas">Doenças Hepáticas Crônicas</option>
+                                <option value="Doenças-Endocrinas-e-Metabolicas">Doenças Endócrinas e Metabólicas</option>
+                                <option value="Osteoporose">Osteoporose</option>
+                                <option value="Esclerose-Multipla">Esclerose Múltipla</option>
+                                <option value="Doencas-Renais-Cronicas">Doenças Renais Crônicas</option>
+                                <option value="Doenca-de-Parkinson">Doença de Parkinson</option>
+                                <option value="Doenca-de-Alzheimer">Doença de Alzheimer</option>
+                            </select>
+                        </div>
+                    </div>
+                </fieldset>
+    
+                <!-- Sessão 4: Senha -->
+                <fieldset>
+                    <legend>Credenciais</legend>
+                    <div class="input-item">
+                        <label for="senha">Senha:</label>
+                        {{ form.senha }}
+                    </div>
+                </fieldset>
+    
+                <!-- Botão de cadastro -->
+                <div class="form-section">
+                    <button class="cadastrar" type="submit">Cadastrar</button>
+                </div>
             </form>
-
         </div>
     </div>
+    
 
-    <footer>
-        <p>&copy;2024 Meu Site. Todos os Direitos Resevados.</p>
-    </footer>
-
-    <script>
-        // Aplique a máscara de telefone no campo de telefone
-        const telefoneInput = document.getElementById('id_telefone');
-        const mask = new Inputmask('(99) 99999-9999');  // Máscara de telefone
-        mask.mask(telefoneInput);  // Aplica a máscara no campo com o id 'id_telefone'
-    </script>
-</body>
-
+    <section class="sobre">
+            <div class="sobre">
+                <div id="contactir" class="sobreTexto">
+                    <br>
+                    <br><br>
+                    <h2>Sobre a Emotive +</h2>
+                    <p>Conheça mais sobre a nossa história e o compromisso com a sua saúde.</p>
+                    <p><a class="emailfooter" href="mailto:contato@emotivesaude.com.br">Contato: contato@emotivesaude.com.br </a></p>
+                </div>
+            </div>
+    
+            <div class="sobreImagem">
+                <img  src="{% static 'img/redessociais.png'%}" alt="Cuide da saúde com qualidade">
+            </div>
+        </section>
+            <!-- Rodapé -->
+            <footer class="footer">
+                <p>&copy; 2024 Turma 232 - Todos os direitos reservados</p>
+                <p><a class="emailtermos" href="termos">Termos de Uso | Politícas de Privacidade</a></p>
+            </footer>
+    
+    </body>
 </html>

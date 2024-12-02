@@ -17,5 +17,5 @@ function selectMood(button, mood) {
 document.getElementById('moodForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Impede o envio padrão do formulário
     alert("Sua Sugestão Foi Registrada, Você Será Redirecionado(a).");
-    window.location.href = ''; // Redireciona para a página de intensidade
+    window.location.href = '/dicas'; // Redireciona para a página de intensidade
 });

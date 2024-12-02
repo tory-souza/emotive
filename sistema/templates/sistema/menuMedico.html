@@ -8,33 +8,202 @@
     <title>Emotive+</title>
     <link rel="icon" href="{% static 'img/logo.png'%}">
     <link rel="stylesheet" href="{% static 'css/menuMedico.css'%}">
+    <script src="https://kit.fontawesome.com/9d26e4abf2.js" crossorigin="anonymous"></script>
+
+    <style>
+        /* Container do menu */
+        .custom-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 0; /* Maior espaçamento para dar destaque ao menu */
+            background-color: #f8f8f8; /* Cor clara de fundo para contraste */
+        }
+        
+        /* Caixa que envolve o conteúdo do menu */
+        .custom-box {
+            width: 100%;
+            max-width: 300px; /* Menor largura para o menu */
+            background-color: #ffffff; /* Fundo branco */
+            border-radius: 10px; /* Bordas arredondadas */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave para profundidade */
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        /* Estilos do menu */
+        .custom-nav {
+            display: flex;
+            flex-direction: column; /* Alinha os itens na vertical */
+            align-items: center;
+            padding: 20px;
+            background-color: #7ecd73; 
+            color: #fff;
+        }
+        
+        /* Logo do menu */
+        .custom-logo img {
+            height: 60px; /* Logo maior */
+            margin-bottom: 20px; /* Espaçamento abaixo do logo */
+        }
+        
+        /* Estilo da lista do menu */
+        .custom-menu {
+            display: flex;
+            flex-direction: column; /* Layout vertical */
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+        
+        /* Item do menu */
+        .custom-menu-item {
+            width: 100%; /* Itens ocupando a largura total do menu */
+            margin-bottom: 15px; /* Espaçamento entre os itens */
+        }
+        
+        /* Links do menu */
+        .custom-menu-link {
+            text-decoration: none;
+            color: #ffffff; /* Texto branco */
+            font-family: 'Roboto', sans-serif; /* Fonte moderna */
+            font-size: 18px;
+            font-weight: 500;
+            padding: 12px 20px; /* Espaçamento interno para os itens */
+            display: block; /* Para o link ocupar toda a largura do item */
+            border-radius: 5px; /* Bordas arredondadas nos itens */
+            transition: background-color 0.3s ease, color 0.3s ease; /* Transição suave */
+        }
+        
+        /* Efeito de hover nos links */
+        .custom-menu-link:hover {
+            background-color: #59984e; /* Cor de fundo dourado ao passar o mouse */
+            color: #fff; /* Texto escuro ao passar o mouse */
+        }
+        
+        /* Saudação do usuário (primeiro item com estilo diferente) */
+        .custom-menu-item:first-child .custom-menu-link {
+            font-size: 20px;
+            font-weight: 700;
+            text-align: center; /* Centraliza a saudação */
+            background-color: #59984e; /* Cor de fundo especial para a saudação */
+        }
+        
+        /* Efeito de hover para o primeiro item */
+        .custom-menu-item:first-child .custom-menu-link:hover {
+            background-color: #003366; /* Tom mais escuro de azul */
+            color: #FFD700; /* Texto dourado */
+        }
+        
+        /* Estilos responsivos para telas pequenas */
+        @media (max-width: 768px) {
+            .custom-box {
+                max-width: 280px; /* Reduz um pouco a largura do menu em telas menores */
+            }
+        
+            .custom-logo img {
+                height: 50px;
+            }
+        
+            .custom-menu-link {
+                font-size: 16px;
+                padding: 10px 15px; /* Reduz o padding */
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .custom-logo img {
+                height: 40px;
+            }
+        
+            .custom-menu-link {
+                font-size: 14px;
+                padding: 8px 12px; /* Ajuste nos itens em telas pequenas */
+            }
+        }
+        
+    </style>    
 </head>
 <body>
-    <header>
-        <nav>
+    <!-- Cabeçalho -->
+    <header class="header">
+        <div class="logo">
+            <img src="{% static 'img/logoComNome.png'%}" alt="Logo Emotive+">
+        </div>
+        <nav class="nav">
             <ul>
-                <li><a href="/sistema">Página Inicial</a></li>
-                <li><a href="#">Sobre Nós</a></li>
-                <li><a href="loginmedico">Fazer Logout</a></li>
-                <br>
+                <li><a href="/sistema">Página inicial</a></li>
+                <li><a href="dicasalimentacao">Dicas de Alimentação</a></li>
+                <li><a href="#">Como usar</a></li>
+                <li><a href="acesso">Contato</a></li>
+                <li><a class="btlogin" href="login">Fazer Logout</a></li>
             </ul>
         </nav>
     </header>
-    <div class="container">
-        <div class="box">
-            <nav>
-                <div class="logo">
+
+    <div class="custom-container">
+        <div class="custom-box">
+            <nav class="custom-nav">
+                <!-- Logo Section -->
+                <div class="custom-logo">
                     <img src="{% static 'img/logo.png'%}" alt="Logo Médica">
                 </div>
-                <ul>
-                    <li><a href="#">Olá Médica</a></li>
-                    <li><a href="consultarPac">Consultar Paciente</a></li>
-                    <li><a href="pacienteRisco">Pacientes em risco</a></li>
-                    <li><a href="consultasDaSemana">Consultas da semana</a></li>
+    
+                <!-- Menu Options -->
+                <ul class="custom-menu">
+                    <!-- User Greeting -->
+                    <li class="custom-menu-item">
+                        <a class="custom-menu-link" href="#">
+                            <i class="fa-solid fa-user-doctor"></i>   Olá, Dra. Maria Clara
+                        </a>
+                    </li>
+                    
+                    <!-- Menu Links -->
+                    <li class="custom-menu-item">
+                        <a class="custom-menu-link" href="consultarPac">
+                            <i class="fa-solid fa-magnifying-glass"></i> Consultar Paciente
+                        </a>
+                    </li>
+                    <li class="custom-menu-item">
+                        <a class="custom-menu-link" href="pacienteRisco">
+                            <i class="fa-solid fa-triangle-exclamation"></i> Pacientes em Risco
+                        </a>
+                    </li>
+                    <li class="custom-menu-item">
+                        <a class="custom-menu-link" href="consultasDaSemana">
+                            <i class="fa-solid fa-calendar-days"></i> Consultas da Semana
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </div>
     </div>
     
+    
+    
+    
+
+    <!-- Seção Sobre a Emotive+ -->
+    <section class="sobre">
+        <div id="sobre" class="sobreTexto">
+            <br>
+            <br>
+            <h2>Sobre a Emotive+</h2>
+            <p>Conheça mais sobre a nossa história e o compromisso com a sua saúde.</p>
+            <p><a class="emailfooter" href="mailto:contato@emotivesaude.com.br">Contato: contato@emotivesaude.com.br</a></p>
+        </div>
+
+        <div class="sobreImagem">
+            <img src="{% static 'img/redessociais.png'%}" alt="Cuide da saúde com qualidade">
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <p>&copy; 2024 Turma 232 - Todos os direitos reservados</p>
+        <p><a class="emailtermos" href="termos">Termos de Uso | Políticas de Privacidade</a></p>
+    </footer>
 </body>
 </html>

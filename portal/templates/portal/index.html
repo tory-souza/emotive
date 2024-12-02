@@ -1,15 +1,16 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emotive +</title>
-    <link rel="icon" href="{% static 'img/logo.png'%}" type="icon-x">
-    <link rel="stylesheet" href="{% static 'css/styles.css'%}">
+    <link rel="icon" href="{% static 'img/logo.png'%}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/styles-portal.css'%}">
+    <script src="https://kit.fontawesome.com/9d26e4abf2.js" crossorigin="anonymous"></script>
 </head>
 <body>
-
 
     <!-- Cabeçalho -->
     <header class="header">
@@ -18,22 +19,23 @@
         </div>
         <nav class="nav">
             <ul>
-                <li><a href="">Página inicial</a></li>
-                <li><a href="/dicas/">Dicas de Alimentações</a></li>
+                <li><a href="/dicas">Página Inicial</a></li>
+                <li><a href="/dicas">Dicas de Alimentações</a></li>
                 <li><a href="#">Como usar</a></li>
-                <li><a href="#">Cadastra-se</a></li>
-                <li><a href="#r">Contato</a></li>
-                <li><a class="btlogin" href="#"> Fazer login</a></li>
+                <li><a href="/sistema/cadastroUser">Cadastra-se</a></li>
+                <li><a href="/sistema/contato">Contato</a></li>
+                <li><a class="btlogin" href="/sistema/loginmedico"><i class="fa-solid fa-user-doctor"></i> Médico(a)</a></li>
+                <li><a class="btlogin" href="/sistema/login"><i class="fa-solid fa-user"></i> Pacientes</a></li>
             </ul>
         </nav>
     </header>
 
+    <!-- Slider -->
     <section class="slider">
         <div class="slides">
-            <img src="{% static 'img/slides1.jpg'%}" alt="Imagem 1">
+            <img src="{% static 'img/slide-01.jpg'%}" alt="Imagem 1">
             <img src="{% static 'img/slides2.jpg'%}" alt="Imagem 2">
             <img src="{% static 'img/slides3.jpg'%}" alt="Imagem 3">
-            <img src="{% static 'img/slides4.jpg'%}" alt="Imagem 4">
         </div>
         <div class="dots">
             <span class="dot" data-slide="0"></span>
@@ -42,61 +44,113 @@
             <span class="dot" data-slide="3"></span>
         </div>
     </section>
-    
 
-    
-    </section>   
-    <div class="cards-container">
-        <div class="card">
-            <img src="{% static 'img/ffb67c0cbdf3cc4dd2a13b69ce367cd4_XL.jpg'%}" alt="Imagem do Card" class="card-img">
-            <div class="card-content">
-                <h2 class="card-title">Acompanhe sua Saúde com Gráficos Interativos📈</h2>
-                <p class="card-text">Acompanhe sua saúde com gráficos interativos de pressão, glicose, peso e mais. 
-                    Tome decisões mais informadas com facilidade!
-                </p>
-                <br>
-                <a class="btlogin" href=""> Saiba Mais</a>
-            </div>
-        </div>
-        <div class="card">
-            <img src="{% static 'img/card2.png'%}" alt="Imagem do Card" class="card-img">
-            <div class="card-content">
-                <h2 class="card-title">Consultas Médicas Personalizadas👩‍⚕️</h2>
-                <p class="card-text">
-                    Sua saúde merece atenção especial!
-                    Consultas médicas personalizadas para monitorar sua saúde, diagnosticar precocemente e oferecer tratamentos eficazes.
+        <!-- Cards -->
+            <div class="cards-container">
+                <div class="card">
+                <img src="{% static 'img/ffb67c0cbdf3cc4dd2a13b69ce367cd4_XL.jpg'%}" alt="Imagem do Card" class="card-img">
+                    <div class="card-content">
+                    <h2 class="card-title">Acompanhe sua Saúde com Gráficos Interativos📈</h2>
+                    <p class="card-text">Acompanhe sua saúde com gráficos interativos de pressão, glicose, peso e mais. Tome decisões mais informadas com facilidade!</p>
                     <br>
-                    </p>
-                    <br>
-                    <a class="btlogin" href=""> Saiba Mais</a>
-                    <br>
-            </div>
-        </div>
-        <div class="card">
-            <img src="{% static 'img/monitoramento-saude-01.jpg'%}" alt="Imagem do Card" class="card-img">
-            <div class="card-content">
-                <h2 class="card-title">Monitoramento de Saúde Personalizado🩺</h2>
-                <p class="card-text">
-                    Com nosso serviço de monitoramento contínuo e cuidados personalizados, ajudamos a prevenir complicações
-                     e a manter sua saúde sempre em dia.</p>
-                    <br>
-                    <a class="btlogin" href=""> Saiba Mais</a>
-            </div>
+                    <a id="openModalBtn1" class="btlogin"><i class="fa-solid fa-heart-pulse"></i> Saiba Mais</a>
         </div>
     </div>
-    <section class="banner">
-        <div class="banner-content">
-            <h1 id="csaude">Cuide de sua saúde com a melhor qualidade</h1>
-            <p id="ccsaude">Seu progresso em saúde, monitorado com precisão.</p>
-            <a href="#" class="cta-button">Saiba Mais</a>
+
+    <div id="loginModal1" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModalBtn1">&times;</span>
+            <form action="#">
+                <h2>Monitoramento Contínuo: A Chave para uma Saúde Longa e Saudável</h2>
+                <p>O monitoramento contínuo permite detectar mudanças no organismo ao longo do tempo e facilita a prevenção e o diagnóstico precoce de doenças.</p>
+                <ul>
+                    <li><strong>Prevenção de Doenças:</strong> Consultas regulares e exames personalizados ajudam a prevenir ou minimizar doenças detectadas precocemente.</li>
+                    <li><strong>Detecção Precoce:</strong> Consultas regulares aumentam as chances de identificar doenças em estágios iniciais.</li>
+                    <li><strong>Adaptação de Tratamentos:</strong> O acompanhamento constante permite ajustes nos tratamentos para garantir sua eficácia.</li>
+                </ul>
+            </form>
         </div>
-    </section> 
-       <!-- Seção de Depoimentos -->
-       <section class="testimonials">
+    </div>
+
+    <div class="card">
+        <img src="{% static 'img/card2.png'%}" alt="Imagem do Card" class="card-img">
+        <div class="card-content">
+            <h2 class="card-title">Consultas Médicas Personalizadas👩‍⚕️</h2>
+            <p class="card-text">Sua saúde merece atenção especial! Consultas médicas personalizadas para monitorar sua saúde, diagnosticar precocemente e oferecer tratamentos eficazes.</p>
+            <br>
+            <a id="openModal2Btn" class="btlogin"><i class="fa-solid fa-heart-pulse"></i> Saiba Mais</a>
+        </div>
+    </div>
+
+    <div id="loginModal2" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModalBtn2">&times;</span>
+            <form action="#">
+                <h2>Monitoramento Contínuo: A Chave para uma Saúde Longa e Saudável</h2>
+                <p>O monitoramento contínuo permite detectar mudanças no organismo ao longo do tempo e facilita a prevenção e o diagnóstico precoce de doenças.</p>
+                <ul>
+                    <li><strong>Prevenção de Doenças:</strong> Consultas regulares e exames personalizados ajudam a prevenir ou minimizar doenças detectadas precocemente.</li>
+                    <li><strong>Detecção Precoce:</strong> Consultas regulares aumentam as chances de identificar doenças em estágios iniciais.</li>
+                    <li><strong>Adaptação de Tratamentos:</strong> O acompanhamento constante permite ajustes nos tratamentos para garantir sua eficácia.</li>
+                </ul>
+            </form>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="{% static 'img/monitoramento-saude-01.jpg'%}" alt="Imagem do Card" class="card-img">
+        <div class="card-content">
+            <h2 class="card-title">Monitoramento de Saúde Personalizado🩺</h2>
+            <p class="card-text">Com nosso serviço de monitoramento contínuo e cuidados personalizados, ajudamos a prevenir complicações e a manter sua saúde sempre em dia.</p>
+            <br>
+            <a id="openModalBtn3" class="cta-button"><i class="fa-solid fa-heart-pulse"></i> Saiba Mais</a>
+        </div>
+    </div>
+    <div id="loginModal3" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModalBtn3">&times;</span>
+            <form action="#">
+                <h2>Monitoramento Contínuo: A Chave para uma Saúde Longa e Saudável</h2>
+                <p>O monitoramento contínuo permite detectar mudanças no organismo ao longo do tempo e facilita a prevenção e o diagnóstico precoce de doenças.</p>
+                <ul>
+                    <li><strong>Prevenção de Doenças:</strong> Consultas regulares e exames personalizados ajudam a prevenir ou minimizar doenças detectadas precocemente.</li>
+                    <li><strong>Detecção Precoce:</strong> Consultas regulares aumentam as chances de identificar doenças em estágios iniciais.</li>
+                    <li><strong>Adaptação de Tratamentos:</strong> O acompanhamento constante permite ajustes nos tratamentos para garantir sua eficácia.</li>
+                </ul>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Banner -->
+        <section class="banner">
+        <div class="banner-content">
+        <h1 id="csaude">Cuide de sua saúde com a melhor qualidade</h1>
+        <p id="ccsaude">Seu progresso em saúde, monitorado com precisão.</p>
+        <a id="openModal4Btn" class="cta-button">Saiba Mais</a>
+    </div>
+    <div id="loginModal4" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModalBtn4">&times;</span>
+            <form action="#">
+                <h2>Monitoramento Contínuo: A Chave para uma Saúde Longa e Saudável</h2>
+                <p>O monitoramento contínuo permite detectar mudanças no organismo ao longo do tempo e facilita a prevenção e o diagnóstico precoce de doenças.</p>
+                <ul>
+                    <li><strong>Prevenção de Doenças:</strong> Consultas regulares e exames personalizados ajudam a prevenir ou minimizar doenças detectadas precocemente.</li>
+                    <li><strong>Detecção Precoce:</strong> Consultas regulares aumentam as chances de identificar doenças em estágios iniciais.</li>
+                    <li><strong>Adaptação de Tratamentos:</strong> O acompanhamento constante permite ajustes nos tratamentos para garantir sua eficácia.</li>
+                </ul>
+            </form>
+        </div>
+    </div>
+</section>
+
+    <!-- Depoimentos -->
+    <section class="testimonials">
         <h2>O que falam sobre a Emotive+</h2>
         <div class="testimonial-card">
             <div class="testimonial-img">
-                <img src="{% static 'img/7-testimunho.png'%}" alt="ClienteUm">
+                <img src="{% static 'img/7-testimunho.png'%}" alt="Cliente Um">
             </div>
             <div class="testimonial-text">
                 <p class="testimonial-quote">"Graças ao site da Hapvida, consegui entender melhor os planos de saúde e tomei decisões mais informadas. A navegação fácil e a clareza das informações ajudaram a minha família a escolher o plano ideal!"</p>
@@ -105,7 +159,7 @@
         </div>
         <div class="testimonial-card">
             <div class="testimonial-img">
-                <img src="{% static 'img/6-testimunho.png'%}" alt="clienteDois">
+                <img src="{% static 'img/6-testimunho.png'%}" alt="Cliente Dois">
             </div>
             <div class="testimonial-text">
                 <p class="testimonial-quote">"O atendimento online e a facilidade de agendamento de consultas diretamente pelo site me proporcionaram muito mais conforto e praticidade. Minha experiência foi incrível!"</p>
@@ -114,49 +168,48 @@
         </div>
         <div class="testimonial-card">
             <div class="testimonial-img">
-                <img src="{% static 'img/8-testimunho.png'%}" alt="clienteTres">
+                <img src="{% static 'img/8-testimunho.png'%}" alt="Cliente Três">
             </div>
             <div class="testimonial-text">
-                <p class="testimonial-quote">"Nunca imaginei que um site poderia ajudar tanto em questões de saúde. A integração com as unidades e planos foi perfeita. Agora me sinto muito mais seguro com as opções que encontrei." </p>
+                <p class="testimonial-quote">"Nunca imaginei que um site poderia ajudar tanto em questões de saúde. A integração com as unidades e planos foi perfeita. Agora me sinto muito mais seguro com as opções que encontrei."</p>
                 <p class="testimonial-author">Ana Oliveira, Paciente</p>
             </div>
         </div>
     </section>
+
+    <!-- Seção Saúde Prioritária -->
     <section class="health-priority">
         <h2>Saúde é Prioridade</h2>
         <div class="health-priority-content">
             <div class="health-priority-text">
                 <h3>Cuide da Sua Saúde com Responsabilidade</h3>
-                <p>Bem-vindo ao nosso aplicativo de cuidado com pessoas com doenças crônicas! Acreditamos que a saúde não é apenas a ausência de doenças, mas um estado de bem-estar que deve ser cuidado de forma contínua e integrada. Por isso, desenvolvemos uma solução inovadora para ajudá-lo a gerenciar sua saúde de maneira mais eficiente, prática e personalizada. Nosso aplicativo foi criado com o objetivo de proporcionar mais qualidade de vida, oferecendo ferramentas para o monitoramento constante da saúde e apoio para quem vive com doenças crônicas. Seja para controlar a medicação, monitorar interrupções de saúde ou receber orientações sobre hábitos</p>
+                <p>Bem-vindo ao nosso aplicativo de cuidado com pessoas com doenças crônicas! Acreditamos que a saúde não é apenas a ausência de doenças, mas um estado de bem-estar que deve ser cuidado de forma contínua e integrada.</p>
             </div>
             <div class="health-priority-image">
-                <img src="{% static 'img/Acompanhamento na sola da bota.png'%}" alt="a saúde com qualidade">
+                <img src="{% static 'img/Acompanhamento na sola da bota.png'%}" alt="A saúde com qualidade">
             </div>
         </div>
-        </div>
     </section>
+
+    <!-- Sobre -->
     <section class="sobre">
-        <div class="sobre">
-            <div id="contactir" class="sobreTexto">
-                <br>
-                <br><br>
-                <h2>Sobre a Emotive +</h2>
-                <p>Conheça mais sobre a nossa história e o compromisso com a sua saúde.</p>
-                <p><a class="emailfooter" href="mailto:contato@emotivesaude.com.br">Contato: contato@emotivesaude.com.br </a></p>
-            </div>
+        <div class="sobreTexto">
+            <h2>Sobre a Emotive +</h2>
+            <p>Conheça mais sobre a nossa história e o compromisso com a sua saúde.</p>
+            <p><a class="emailfooter" href="mailto:contato@emotivesaude.com.br">Contato: contato@emotivesaude.com.br</a></p>
         </div>
-
         <div class="sobreImagem">
-            <img  src="{% static 'img/redessociais.png'%}" alt="Cuide da saúde com qualidade">
+            <img src="{% static 'img/redessociais.png'%}" alt="Redes sociais da Emotive+">
         </div>
     </section>
-        <!-- Rodapé -->
-        <footer class="footer">
-            <p>&copy; 2024 Turma 232 - Todos os direitos reservados</p>
-            <p><a class="emailtermos" href="termos.html">Termos de Uso | Politícas de Privacidade</a></p>
-        </footer>
-        <script src="{% static 'script/index.js'%}"></script>
 
+    <!-- Rodapé -->
+    <footer class="footer">
+        <p>&copy; 2024 Turma 232 - Todos os direitos reservados</p>
+        <p><a class="emailtermos" href="termos">Termos de Uso | Políticas de Privacidade</a></p>
+    </footer>
+
+    <script src="{% static 'script/index.js'%}"></script>
+    <script src="{% static 'script/tex.js'%}"></script>
 </body>
 </html>
-

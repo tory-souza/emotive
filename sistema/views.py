@@ -10,6 +10,7 @@ def index(request):
 
 def acesso(request):
     userp=request.session.get('userp', None)
+    userp=userp.capitalize()
     return render(request, 'sistema/acesso.html', {'userp':userp})
 
 def cadastroUser(request):
@@ -38,7 +39,8 @@ def dicasalimentacao(request):
     return render(request, 'sistema/dicasalimentacao.html')
 
 def intensidade(request):
-    return render(request, 'sistema/intensidade.html')
+    userp=request.session.get('userp', None)
+    return render(request, 'sistema/intensidade.html', {'userp':userp})
 
 def login(request):
     if request.method=='POST':
@@ -56,8 +58,6 @@ def login(request):
             
     return render (request,'sistema/login.html')
         
-
-
 def loginmedico(request):
     return render(request, 'sistema/loginmedico.html')
 
@@ -70,5 +70,12 @@ def pacienteRisco(request):
 def reset(request):
     return render(request, 'sistema/reset.html')
 
+def mensagemDia(request):
+    userp=request.session.get('userp', None)
+    userp=userp.capitalize()
+    return render(request, 'sistema/mensagemDia.html', {'userp':userp})
+
 def sonopaciente(request):
-    return render(request, 'sistema/sonopaciente.html')
+    userp=request.session.get('userp', None)
+    userp=userp.capitalize()
+    return render(request, 'sistema/sonopaciente.html', {'userp':userp})

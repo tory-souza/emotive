@@ -1,25 +1,62 @@
-<!DOCTYPE html>
-{% load static%}
+{% load static %}
 
-<html lang="en">
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emotive+</title>
-    <link rel="icon" href="{% static 'img/logo.png'%}">
-    <link rel="stylesheet" href="{% static 'css/acesso.css'%}">
-    <script src="{% static 'script/acessopaciente.js'%}"></script>
+    <link rel="icon" href="{% static 'img/logo.png' %}">
+    <link rel="stylesheet" href="{% static 'css/acesso.css' %}">
+    <script src="{% static 'script/acessopaciente.js' %}"></script>
+    <script src="https://kit.fontawesome.com/9d26e4abf2.js" crossorigin="anonymous"></script>
 </head>
-<body> <form method="post">
-    {% csrf_token %}
-        <div class="UserLogado"> 
-            <h1 id="greeting" name="nome">Como você está hoje, {{ userp }} ?</h1> 
-            <button onclick="sendMood('Feliz')">Feliz 😀</button> 
-            <button onclick="sendMood('Cansado')">Cansado 😫</button> 
-            <button onclick="sendMood('Enjoado')">Enjoado 🤢</button> 
-            <button onclick="sendMood('Triste')">Triste 😞</button> 
-            <button onclick="sendMood('Com Dor')">Com Dor 😵‍💫</button> 
-        </form>
-    </div>
+<body>
+    <!-- Cabeçalho -->
+    <header class="header">
+        <div class="logo">
+            <img src="{% static 'img/logoComNome.png' %}" alt="Logo Emotive+">
+        </div>
+        <nav class="nav">
+            <ul>
+                <li><a href="/">Página inicial</a></li>
+                <li><a href="/dicas/">Dicas de Alimentação</a></li>
+                <li><a href="#">Como usar</a></li>
+                <li><a href="#">Contato</a></li>
+                <li><a class="btlogin" href="/sistema/login"> <i class="fa-solid fa-right-from-bracket"></i> Fazer Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main>
+        <div class="UserLogado">
+            <h1 id="greeting" name="nome">Pergunta 01 (Diário): você está hoje, {{ userp }} ?</h1> 
+            <button onclick="sendMood('Feliz')">Feliz 😀</button>
+            <button onclick="sendMood('Cansado')">Cansado 😫</button>
+            <button onclick="sendMood('Enjoado')">Enjoado 🤢</button>
+            <button onclick="sendMood('Triste')">Triste 😞</button>
+            <button onclick="sendMood('Com Dor')">Com Dor 😵‍💫</button>
+        </div>
+    </main>
+        <section class="sobre">
+            <div id="sobre" class="sobreTexto">
+                <br><br><br>
+                <h2>Sobre a Emotive+</h2>
+                <p>Conheça mais sobre a nossa história e o compromisso com a sua saúde.</p>
+                <p><a class="emailfooter" href="mailto:contato@emotivesaude.com.br">Contato: contato@emotivesaude.com.br</a></p>
+            </div>
+
+            <div class="sobreImagem">
+                <img src="{% static 'img/redessociais.png'%}" alt="Cuide da saúde com qualidade">
+            </div>
+        </section>
+    
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <p>&copy; 2024 Turma 232 - Todos os direitos reservados</p>
+        <p><a class="emailtermos" href="termos">Termos de Uso | Políticas de Privacidade</a></p>
+    </footer>
 </body>
 </html>

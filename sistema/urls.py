@@ -8,6 +8,7 @@ urlpatterns = [
     path ('consultasDaSemana', views.consultasDaSemana, name='consultasDaSemana'),
     path ('dicasalimentacao', views.dicasalimentacao, name='dicasalimentacao'),
     path ('intensidade', views.intensidade, name='intensidade'),
+    path ('mensagemDia', views.mensagemDia, name='mensagemDia'),
     path ('login', views.login, name='login'),
     path ('loginmedico', views.loginmedico, name='loginmedico'),
     path ('menuMedico', views.menuMedico, name='menuMedico'),

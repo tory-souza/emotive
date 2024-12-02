@@ -1,120 +1,267 @@
-body { 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    height: 100vh; 
-    margin: 0; 
-    background-color: #f9f9f9; 
-    font-family: Arial, sans-serif; 
-} 
-header {
-    text-align: center;
-    position: absolute; 
-    top: 20px; 
-    right: 150px;
-    background-color: #487ae6;
-    color: white;
-    padding: 2px;
-    border-radius: 10px;
+/* Reset de estilo básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-header nav ul {
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    overflow-x: hidden;
+    min-height: 100vh; /* Garante que a altura da página seja pelo menos 100% da altura da tela */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Cabeçalho */
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0; /* Fixa no topo */
+    z-index: 2; /* Garante que o cabeçalho fique acima de outros elementos */
+}
+
+header .logo img {
+    width: 150px;
+}
+
+nav ul {
     list-style-type: none;
     display: flex;
-    gap: 20px;
 }
 
-header nav ul li {
-    display: inline-block;
+nav ul li {
+    margin-left: 20px;
 }
 
-header nav ul li a {
-    color: white;
+nav ul li a {
+    color: #226716;
     text-decoration: none;
     font-weight: bold;
-}
-.container { 
-    display: flex; 
-} 
-.imglogin{
-    width: 145px;
-}
-.boasvindas { 
-    
-    color: white; 
-    background-color: #487ae6; 
-    padding: 20px; 
-    border-radius: 10px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    width: 300px; 
-    text-align: center; 
-} 
-.login { 
-    background-color: #f4f4f4; 
-    padding: 20px; 
-    border-radius: 10px; 
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
-    width: 300px;
-}
-.login h2 { 
-    color: #333; 
-    margin-bottom: 20px; 
-} 
-.login div { 
-    margin-bottom: 15px; 
-} 
-.login label { 
-    display: flex; 
-    flex-direction: column; 
-    color: #333; font-size: 16px; 
-} 
-.login input[type="email"], .login input[type="password"] {
-     
-    padding: 10px; 
-    border: 1px solid #ddd; 
-    border-radius: 5px; 
-    width: calc(100% - 22px); 
+    font-size: 18px;
 }
 
-#email{
-    width: 50px;
+nav ul li a:hover {
+    text-decoration: none;
+    color: #ffa537;
 }
-.login button {
-    background-color: #487ae6; 
-    color: white; 
-    border: center; 
-    padding: 15px;
-    border-radius: 10px; 
-    cursor: pointer; 
-    font-size: 16px; 
-    transition: background-color 0.3s ease; 
-} 
-.login button:hover { 
-    background-color: #EEEEE0; 
-} 
-.login a { 
-    padding: 20px ; 
-    display: center; 
-    color: black; 
-    text-decoration: none; 
-    font-size: 15px; 
-} 
-#resetext{ 
-    color: black; 
-    text-decoration: none; 
-} 
-#resetext:hover{ 
-    color: red; 
-    text-decoration: underline; 
-} 
-.login a:hover { 
-    text-decoration: underline; 
+
+nav ul li a, .btlogin {
+    text-decoration: none;
+    color: #226716;
+    font-weight: bold;
 }
-footer{
+
+.btlogin {
+    padding: 10px 20px;
+    background-color: #5bb450;
+    border-radius: 25px;
+    transition: background-color 0.3s;
+}
+
+.btlogin:hover {
+    background-color: #3b8c2e;
+}
+
+/* Boas-Vindas */
+.boasvindas {
     text-align: center;
+    padding: 50px;
+    background-color: whitesmoke;
+}
+.usuariosloginacess{
+    width: 300px;
+}
+.boasvindas h2 {
+    font-size: 28px;
+    color: #333;
+}
+
+.boasvindas p {
+    font-size: 18px;
+    color: #666;
+}
+
+.boasvindas .imglogin {
+    max-width: 200px;
+    margin-top: 20px;
+}
+
+/* Seção de login */
+.login {
+    background-color: white;
+    padding: 40px;
+    text-align: center;
+}
+
+.login h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.login label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.login input {
+    padding: 10px;
     width: 100%;
-    height: 100px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
+    max-width: 300px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.login button {
+    padding: 10px 20px;
+    background-color: #5bb450;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login button:hover {
+    background-color: #3b8c2e;
+}
+
+#resetext {
+    display: block;
+    margin-top: 10px;
+    color: #226716;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+#resetext:hover {
+    color: #ffa537;
+}
+
+/* Seção sobre */
+.sobre {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    background-color: white;
+    padding: 50px;
+}
+
+.sobreTexto {
+    flex: 1;
+    font-size: 18px;
+    color: #555;
+    text-align: left;
+}
+
+.sobreImagem {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sobreImagem img {
+    width: 100%;
+    max-width: 300px;
+}
+
+/* Rodapé */
+.footer {
+    background-color: #226716;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+}
+
+.footer p {
+    color: white;
+    text-decoration: none;
+}
+.footer a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo de imagem do rodapé */
+.imagem_lous {
+    align-self: center;
+    max-width: 425px;
+}
+
+.emailfooter {
+    color: #000000;
+}
+
+.emailtermos {
+    color: white;
+}
+
+form img {
+    border-radius: 25%;
+    align-items: center;
+}
+
+/* Media Query para telas pequenas (iPhone, etc.) */
+@media screen and (max-width: 375px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .boasvindas h2 {
+        font-size: 24px;
+    }
+
+    .boasvindas p {
+        font-size: 16px;
+    }
+
+    .login h2 {
+        font-size: 20px;
+    }
+
+    .login input {
+        max-width: 250px;
+    }
+
+    .sobre {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .sobreTexto {
+        text-align: center;
+    }
+
+    .sobreImagem img {
+        max-width: 100%;
+    }
+
+    .footer {
+        padding: 10px 0;
+    }
 }

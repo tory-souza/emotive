@@ -5,13 +5,89 @@ body {
     margin: 0;
     padding: 0;
 }
-header {
-    position: absolute; 
-    top: 20px; 
-    right: 100px;
+
+/* Cabeçalho */
+header, .header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0; /* Fixa no topo */
+    z-index: 2; /* Garante que o cabeçalho fique acima de outros elementos */
+}
+
+/* Estilo do logo */
+.header .logo img {
+    width: 250px;
+}
+
+/* Navegação */
+.nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+.nav ul li {
+    margin-left: 20px;
+}
+
+.nav ul li a {
+    color: #226716;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.nav ul li a:hover {
+    text-decoration: none;
+    color: #ffa537;
+}
+
+.UserLogado { 
     color: white;
+    text-align: center; 
+    background-color: #2c91c5; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+    padding: 20px; 
+} 
+
+/* Botões */
+button { 
+    background-color: #EEEEE0; 
+    color: black; 
+    padding: 10px 15px; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-size: 20px; 
+    margin: 10px; 
+    transition: background-color 0.3s ease; 
+} 
+
+button:hover { 
+    background-color: #7bce6d;
+}
+
+nav ul li a, .btlogin, .cta-button {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.btlogin, .cta-button, .card-btn {
     padding: 10px 20px;
-    border-radius: 8px;
+    background-color: #5bb450;
+    border-radius: 25px;
+    transition: background-color 0.3s;
+}
+
+.btlogin:hover, .cta-button:hover, .card-btn:hover {
+    background-color: #3b8c2e;
 }
 
 /* Contêiner principal */
@@ -19,8 +95,8 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0; /* Fundo leve */
+    min-height: 100vh;
+    margin-top: 60px; /* Adicionando margem para evitar que o conteúdo fique sob o cabeçalho fixo */
 }
 
 /* Caixa que envolve o menu */
@@ -32,23 +108,33 @@ header {
     width: 250px;
 }
 
-/* Estilo do menu */
+/* Estilo do menu lateral */
 nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-/* Itens do menu */
 nav ul li {
     margin: 15px 0;
 }
 
-/* Links do menu */
 nav ul li a {
     text-decoration: none;
     color: #ffffff;
-    background-color: #16500c; /* Cor principal */
+    padding: 12px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    text-align: center;
+    display: block;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.doctorlistwork {
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #0f3c09;
     padding: 12px;
     font-size: 1.1rem;
     font-weight: bold;
@@ -59,11 +145,52 @@ nav ul li a {
 }
 
 /* Efeito de hover nos links */
-nav ul li a:hover {
+nav ul li a:menudoctor {
     background-color: #0f3c09; /* Cor mais escura ao passar o mouse */
     transform: translateY(-2px); /* Efeito de elevação ao passar o mouse */
 }
 
-.logo{
+.logo {
     text-align: center;
+}
+
+/* Seção Sobre a Emotive+ */
+.sobre {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #ffffff;
+    margin-top: 20px;
+}
+
+.sobreTexto {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.sobreImagem img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Rodapé */
+.footer {
+    background-color: #16500c;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+.emailfooter {
+    color: black;
+}
+
+.footer a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
 }
