@@ -201,6 +201,8 @@ main {
 }
 
 .sobre {
+    padding: 10px;  
+    background: white;  
     display: flex;
     gap: 20px; /* Espaço entre a imagem e o texto */
 }
