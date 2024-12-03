@@ -11,4 +11,5 @@ urlpatterns = [
     path ('yoga', views.yoga, name='yoga'),
     path ('natacao', views.natacao, name='natacao'),
     path ('caminhada', views.caminhada, name='caminhada'),
+    path ('comoUsar', views.comoUsar, name='comoUsar'),
 ]

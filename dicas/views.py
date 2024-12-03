@@ -29,3 +29,6 @@ def natacao(request):
 
 def caminhada(request):
     return render(request, 'dicas/caminhada.html')
+
+def comoUsar(request):
+    return render(request, 'dicas/comoUsar.html')
