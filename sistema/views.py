@@ -70,6 +70,9 @@ def pacienteRisco(request):
 def reset(request):
     return render(request, 'sistema/reset.html')
 
+def termos(request):
+    return render(request, 'sistema/termos.html')
+
 def mensagemDia(request):
     userp=request.session.get('userp', None)
     userp=userp.capitalize()

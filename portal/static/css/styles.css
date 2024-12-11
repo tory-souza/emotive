@@ -124,6 +124,12 @@ nav ul li a, .btlogin, .cta-button {
 .btlogin:hover, .cta-button:hover, .card-btn:hover {
     background-color: #3b8c2e;
 }
+.btloginp{
+    background-color: #3498db;
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: background-color 0.3s;
+}
 
 /* Seção Sobre */
 .about {

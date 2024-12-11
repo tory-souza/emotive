@@ -158,6 +158,7 @@ main {
 }
 
 .sobre {
+    margin-top: 20px;
     display: flex;
     gap: 20px; /* Espaço entre a imagem e o texto */
 }

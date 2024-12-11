@@ -27,8 +27,8 @@ def login(request):
 def loginmedico(request):
     return render(request, 'sistema/loginmedico.html')
 
-def mensagemdia(request):
-    return render(request, 'sistema/mensagemdia.html')
+def mensagemDia(request):
+    return render(request, 'sistema/mensagemDia.html')
 
 def menuMedico(request):
     return render(request, 'sistema/menuMedico.html')
