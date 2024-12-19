@@ -15,4 +15,5 @@ urlpatterns = [
     path ('pacienteRisco', views.pacienteRisco, name='pacienteRisco'),
     path ('reset', views.reset, name='reset'),
     path ('sonopaciente', views.sonopaciente, name='sonopaciente'),
+    path ('termos', views.termos, name='termos'),
 ]

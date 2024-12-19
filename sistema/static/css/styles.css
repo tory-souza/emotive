@@ -14,7 +14,7 @@ body {
 
 /* Cabeçalho */
 header, .header {
-    width: 100%;
+    width: 98%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -636,4 +636,22 @@ h1, .banner p {
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
+}
+.termosuso{
+    position: absolute;
+    text-align: center;
+    background-color: whitesmoke;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px black;
+
+}
+.termosusop{
+    position: absolute;
+    text-align: center;
+    background-color: whitesmoke;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px black;
+
 }

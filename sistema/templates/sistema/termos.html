@@ -5,21 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emotive +</title>
-    <link rel="icon" href="{% static img/logo.png%}" type="icon-x">
+    <link rel="icon" href="{% static 'img/logo.png'%}">
     <link rel="stylesheet" href="{% static 'css/style.css'%}">
 </head>
 <body>
-
-    <!-- Tela de Carregamento -->
-    <div id="loading-screen">
-        <div class="loader"></div>
-        <p>Carregando...</p>
-    </div>
-
     <!-- Cabeçalho -->
     <header class="header">
         <div class="logo">
-            <img src="img/logoComNome.png" alt="Logo Hapvida">
+            <img src="{% static 'img/logoComNome.png'%}" alt="Logo Emotive">
         </div>
         <nav class="nav">
             <ul>
@@ -32,16 +25,26 @@
         </nav>
     </header>
     <section>
-            <!-- Visualização de PDF dos Termos de Uso -->
-            <iframe src="{% static script/lgdpd.pdf}" width="100%" height="600px">
-                Este navegador não suporta visualização de PDFs. Por favor, baixe o PDF para visualizá-lo: <a href="termos-de-uso.pdf">Download PDF</a>.
-            </iframe>
+        <div class="termosuso">
+            <p class="termosusop"> <strong>Termos de Uso</strong><br> Bem-vindo ao Emotive Mais. Estes Termos de Uso estabelecem os termos e condições sob os quais você pode usar nosso site e serviços. Ao acessar ou usar o site Emotive Mais, você concorda em cumprir e se submeter a estes Termos de Uso. Caso não concorde com estes termos, por favor, não utilize nosso site. <br><br> <strong>1. Definição do Serviço</strong><br> O Emotive Mais é uma plataforma desenvolvida para envio diário de informações sobre saúde, particularmente saúde degenerativa. Nosso serviço coleta e monitora dados como e-mail, CPF, endereço, nome, data de nascimento, e status de saúde física e emocional para auxiliar na avaliação clínica e determinar a necessidade de encaminhamento a unidades de saúde. <br><br> <strong>2. Uso do Serviço</strong><br> O uso de nosso serviço é destinado à população em geral, especialmente aqueles com condições de saúde degenerativas. As informações fornecidas pelos usuários serão usadas para observação diária de sua saúde física e emocional. <br><br> <strong>3. Registro de Usuário</strong><br> Para utilizar nossos serviços, você deve se registrar e fornecer informações pessoais precisas e completas, incluindo e-mail, CPF, endereço, nome e data de nascimento. Ao se registrar, você garante que todas as informações fornecidas são verdadeiras e atuais. <br><br> <strong>4. Privacidade dos Dados</strong><br> Nos comprometemos a proteger a privacidade dos seus dados conforme descrito em nossa Política de Privacidade. Por favor, leia nossa Política de Privacidade para entender como tratamos e protegemos seus dados pessoais. <br><br> <strong>5. Responsabilidade do Usuário</strong><br> O usuário é responsável por manter a confidencialidade de suas informações de login e por todas as atividades realizadas sob sua conta. Se você acreditar que houve qualquer uso não autorizado da sua conta, informe-nos imediatamente. <br><br> <strong>6. Limitações de Responsabilidade</strong><br> O Emotive Mais não se responsabiliza por qualquer dano direto, indireto, incidental, especial ou consequencial resultante do uso ou da incapacidade de usar nosso serviço, incluindo, mas não se limitando a, danos por perda de dados ou lucros cessantes. <br><br> <strong>7. Alterações nos Termos de Uso</strong><br> Reservamo-nos o direito de modificar estes Termos de Uso a qualquer momento. Notificaremos você sobre mudanças significativas através do site ou por e-mail. <br><br> <strong>8. Contato</strong><br> Para dúvidas ou informações adicionais, entre em contato conosco através do e-mail: contato@emotivesaude.com.br. <br><br> <strong>Política de Privacidade</strong><br> <strong>Introdução</strong><br> Sua privacidade é importante para nós. Esta Política de Privacidade descreve como coletamos, usamos, divulgamos e protegemos suas informações pessoais ao utilizar o site Emotive Mais. <br><br> <strong>1. Coleta de Informações</strong><br> Coletamos as seguintes informações pessoais dos usuários: Nome completo, E-mail, CPF, Endereço, Data de nascimento, Informações de saúde física e emocional. Essas informações são coletadas para fornecer nossos serviços de monitoramento de saúde e avaliação clínica. <br><br> <strong>2. Uso das Informações</strong><br> Usamos as informações coletadas para: Enviar informações diárias sobre saúde degenerativa, Monitorar a saúde física e emocional dos usuários, Avaliar a necessidade de encaminhamento a unidades de saúde, Comunicar-se com os usuários sobre atualizações de serviços. <br><br> <strong>3. Compartilhamento de Informações</strong><br> Não compartilhamos suas informações pessoais com terceiros, exceto quando exigido por lei ou com o seu consentimento expresso. <br><br> <strong>4. Proteção das Informações</strong><br> Implementamos medidas de segurança adequadas para proteger suas informações pessoais contra acesso não autorizado, alteração, divulgação ou destruição. No entanto, nenhuma medida de segurança é completamente infalível. <br><br> <strong>5. Retenção de Dados</strong><br> Retemos suas informações pessoais pelo tempo necessário para fornecer nossos serviços e conforme exigido por leis aplicáveis. <br><br> <strong>6. Direitos do Usuário</strong><br> Você tem o direito de acessar, corrigir ou excluir suas informações pessoais. Se desejar exercer esses direitos, entre em contato conosco através do e-mail: contato@emotivesaude.com.br. <br><br> <strong>7. Alterações na Política de Privacidade</strong><br> Podemos atualizar esta Política de Privacidade periodicamente. Notificaremos você sobre mudanças significativas através do site ou por e-mail. <br><br> <strong>8. Contato</strong><br> Se tiver alguma dúvida sobre esta Política de Privacidade ou nossas práticas de proteção de dados, entre em contato conosco através do e-mail: contato@emotivesaude.com.br.</p>
+        </div>
     </section>
+    <!-- Sobre -->
+    <section class="sobre">
+        <div class="sobreTexto">
+            <h2>Sobre a Emotive +</h2>
+            <p>Conheça mais sobre a nossa história e o compromisso com a sua saúde.</p>
+            <p><a class="emailfooter" href="mailto:contato@emotivesaude.com.br">Contato: contato@emotivesaude.com.br</a></p>
+        </div>
+        <div class="sobreImagem">
+            <img src="{% static 'img/redessociais.png'%}" alt="Redes sociais da Emotive+">
+        </div>
+    </section>
+
     <!-- Rodapé -->
     <footer class="footer">
-        <p>&copy; 2024 Turma 232 - Todos os direitos reservados</p>
-        <br>
-        <p><a class="emailfooter" href="mailto:contato@emotivesaude.com.br">Contato: contato@emotivesaude.com.br </a></p>
+        <p>&copy; 2024 Emotive+ | Todos os direitos reservados</p>
+        <p><a class="emailtermos" href="/sistema/termos">Termos de Uso | Políticas de Privacidade</a></p>
     </footer>
 
     <script src="{% static script/index.js}"></script>
